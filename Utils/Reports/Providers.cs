@@ -70,7 +70,8 @@ namespace IFlow.WebTests.Utils
                     if (!Directory.Exists(targetDirectory))
                         Directory.CreateDirectory(targetDirectory);
                     ;
-                    var screenShot =  AtataContext.Current.Driver.GetScreenshot();
+                    var screenShot = AtataContext.Current.Driver.GetScreenshot();
+
                     screenShot.SaveAsFile(path);
 
 

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Atata;
+using IFlow.Testing.Utils.Api.Accounts;
 using IFlow.WebTests.Pages;
 using IFlow.WebTests.Utils;
 using TechTalk.SpecFlow;
@@ -13,8 +15,6 @@ namespace IFlow.WebTests.StepDefinitions
     public sealed class RegistrationAndLoginSteps : BaseSteps
     {
 
-
-        
         [Given(@"User without account want create new on registration page")]
         public void GivenUserWithoutAccountWantCreateNewOnRegistrationPage()
         {
@@ -102,6 +102,13 @@ namespace IFlow.WebTests.StepDefinitions
             On<HomePage>().HomePageText.IsVisible.Should.BeTrue();
         }
 
+
+
+        [When(@"Registration by api")]
+        public async Task WhenRegistrationByApi()
+        {
+            await Accounts.AccountsCreateAccount();
+        }
 
     }
 }
