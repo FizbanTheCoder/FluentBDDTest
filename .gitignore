@@ -8,3 +8,5 @@ bin/
 .vs/
 
 Report/
+
+Log/log.log

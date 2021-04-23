@@ -2,7 +2,7 @@
 using System.IO;
 using System.Reflection;
 
-namespace IFlow.WebTests.Utils.ObjectUtils
+namespace IFlow.Testing.Utils.ObjectUtils
 {
     public static class EmbeddedResourceUtility
     {
