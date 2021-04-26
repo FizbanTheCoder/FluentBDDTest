@@ -2,7 +2,7 @@
 using NLog;
 using NLog.Targets;
 
-namespace IFlow.WebTests.Utils
+namespace IFlow.Testing.Utils.Reports
 {
     [Target("CustomLog")]
     public class CustomLogTarget : TargetWithLayout

@@ -1,10 +1,9 @@
-﻿using AventStack.ExtentReports.Reporter;
-using System.IO;
+﻿using System.IO;
 using AventStack.ExtentReports;
-using Microsoft.VisualStudio.TestPlatform.CoreUtilities.Helpers;
+using AventStack.ExtentReports.Reporter;
 using ExtentReport = AventStack.ExtentReports.ExtentReports;
 
-namespace IFlow.WebTests.Utils.Reports
+namespace IFlow.Testing.Utils.Reports
 {
     class Reporter
     {

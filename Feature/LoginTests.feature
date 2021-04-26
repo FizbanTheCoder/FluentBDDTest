@@ -10,4 +10,5 @@ Scenario: User want log in witch active account
 	Then User is logged to account
 
 Scenario: User login by API
+	When Registration by api 
 	When User send correct data to log in

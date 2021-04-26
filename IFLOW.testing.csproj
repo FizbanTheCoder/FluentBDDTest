@@ -10,6 +10,7 @@
     <PackageReference Include="Atata.Configuration.Json" Version="1.5.0" />
     <PackageReference Include="Atata.WebDriverExtras" Version="1.5.0" />
     <PackageReference Include="Atata.WebDriverSetup" Version="1.1.0" />
+    <PackageReference Include="Bogus" Version="33.0.2" />
     <PackageReference Include="Dapper" Version="2.0.78" />
     <PackageReference Include="DapperExtensions.DotnetCore" Version="1.0.1" />
     <PackageReference Include="ExtentReports.Core" Version="1.0.3" />
@@ -25,6 +26,7 @@
     <PackageReference Include="SpecFlow.NUnit" Version="3.7.38" />
     <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.7.38" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.10.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,7 +39,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Utils\Api\Requests\" />
     <Folder Include="Report\" />
   </ItemGroup>
   

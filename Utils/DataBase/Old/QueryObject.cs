@@ -3,12 +3,11 @@ using System.Configuration;
 using System.Data;
 using System.Data.Common;
 using Dapper;
-using IFlow.WebTests.Utils.ObjectUtils;
-using IFlow.WebTests.Utils.Reports;
+using IFlow.Testing.Utils.ObjectUtils;
+using IFlow.Testing.Utils.Reports;
 using Newtonsoft.Json;
 
-
-namespace IFlow.WebTests.Utils.DataBase
+namespace IFlow.Testing.Utils.DataBase.Old
 {
 
    public abstract class QueryObject

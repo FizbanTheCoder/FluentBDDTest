@@ -1,16 +1,14 @@
-﻿using AventStack.ExtentReports;
+﻿using System.Linq;
+using Atata;
+using AventStack.ExtentReports;
 using AventStack.ExtentReports.Gherkin.Model;
 using AventStack.ExtentReports.MarkupUtils;
-using Atata;
-using NUnit.Framework;
-using System.Linq;
-using IFlow.WebTests.Utils;
-using IFlow.WebTests.Utils.Reports;
+using IFlow.Testing.Utils.Reports;
+
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Bindings;
 
-
-namespace IFlow.WebTests
+namespace IFlow.Testing
 {
     [Binding] 
     public sealed class SpecFlowHooks

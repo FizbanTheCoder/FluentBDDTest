@@ -1,22 +1,25 @@
 ﻿using System.Threading.Tasks;
+using Bogus.DataSets;
 using Flurl.Http;
+using IFlow.Testing.Utils.DataFactory;
 
 namespace IFlow.Testing.Utils.Api.Accounts
 {
     public static class Accounts
     {
-        public static async Task AccountsCreateAccount()
+        public static async Task AccountsCreateAccount(string userName, string firstName
+            , string lastName, string email, string password, string country, string phoneNumber)
         {
-             await "https://app-iflow-api-dev-001.azurewebsites.net/api/Accounts"
+          await ApiAddresses.AccountsRegistrationApi
                 .PostJsonAsync(new
                 {
-                    UserName = "lezid3d2", 
-                    FirstName = "Leszek", 
-                    LastName = "Zielinski",
-                    Email = "xlselektor+32132fed@gmail.com",
-                    Password = "RR**^^445577tt",
-                    Country = "Poland",
-                    PhoneNumber ="501081616"
+                    UserName = userName, 
+                    FirstName = firstName, 
+                    LastName = lastName,
+                    Email = email,
+                    Password = password,
+                    Country =  country,
+                    PhoneNumber = phoneNumber
                 });
         }
     }

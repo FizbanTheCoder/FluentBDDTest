@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using Atata;
-using IFlow.WebTests.Utils.Reports;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
-namespace IFlow.WebTests.Utils
+namespace IFlow.Testing.Utils.Reports
 {
     public static class Providers
     {

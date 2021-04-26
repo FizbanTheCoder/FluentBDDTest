@@ -5,7 +5,7 @@ using NLog;
 using NLog.Config;
 using NLog.Targets;
 
-namespace IFlow.WebTests.Utils.Reports
+namespace IFlow.Testing.Utils.Reports
 {
     public sealed class Logger
     {

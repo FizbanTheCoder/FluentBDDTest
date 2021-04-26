@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Atata;
+using IFlow.Testing.Pages;
 using IFlow.Testing.Utils.Api.Accounts;
-using IFlow.WebTests.Pages;
-using IFlow.WebTests.Utils;
 using TechTalk.SpecFlow;
 
-namespace IFlow.WebTests.StepDefinitions
+namespace IFlow.Testing.StepDefinitions
 {
     [Binding]
     public sealed class RegistrationAndLoginSteps : BaseSteps
@@ -102,13 +97,6 @@ namespace IFlow.WebTests.StepDefinitions
             On<HomePage>().HomePageText.IsVisible.Should.BeTrue();
         }
 
-
-
-        [When(@"Registration by api")]
-        public async Task WhenRegistrationByApi()
-        {
-            await Accounts.AccountsCreateAccount();
-        }
 
     }
 }
