@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
-using Atata;
+﻿using Atata;
 
-namespace IFlow.WebTests.Pages
+namespace IFlow.Testing.Pages
 {
     using _=LoginPage;
     [Url("http://app-iflow-dev-001.azurewebsites.net/login")]

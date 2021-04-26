@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using AventStack.ExtentReports;
 using TechTalk.SpecFlow.Bindings;
 
-namespace IFlow.WebTests.Utils.Reports
+namespace IFlow.Testing.Utils.Reports
 {
     class ReportPOCO
     {

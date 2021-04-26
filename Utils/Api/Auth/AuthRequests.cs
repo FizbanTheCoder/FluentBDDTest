@@ -1,16 +1,16 @@
 ﻿using System.Threading.Tasks;
 using Flurl.Http;
+using IFlow.Testing.Utils.DataFactory;
 
 namespace IFlow.Testing.Utils.Api.Auth
 {
     public class AuthRequests
     {
-        public static async Task<string> AuthLoginGetToken()
+        public static async Task<string> AuthLoginGetToken(string userNameOrEmail, string password)
         {
-            return (await "https://app-iflow-api-dev-001.azurewebsites.net/api/Auth"
-                .PostJsonAsync(new {UsernameOrEmail = "lezi_ext", Password = "R**^^445577t"})
+            return (await ApiAddresses.AuthLoginToAccount
+                .PostJsonAsync(new {UsernameOrEmail = userNameOrEmail, Password = password })
                 .ReceiveJson()).accessToken.token;
-            
         }
     }
 }

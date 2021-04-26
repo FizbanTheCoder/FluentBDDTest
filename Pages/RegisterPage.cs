@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
-using Atata;
+﻿using Atata;
 
-namespace IFlow.WebTests.Pages
+namespace IFlow.Testing.Pages
 {
     using _= RegisterPage;
     public class RegisterPage : BasePage<_>
@@ -36,10 +32,6 @@ namespace IFlow.WebTests.Pages
         [FindByXPath("//button[@type='submit']/span[text()='Register']")]
         public Button<_> RegisterButton { get; set; }
 
-        public void smutnaMetoda()
-        {
-
-        }
     }
 
 }

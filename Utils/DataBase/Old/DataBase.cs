@@ -1,7 +1,6 @@
-﻿using System.Configuration;
-using System.Linq;
+﻿using System.Linq;
 
-namespace IFlow.WebTests.Utils.DataBase
+namespace IFlow.Testing.Utils.DataBase.Old
 {
     public class DataBase : QueryObject
     {

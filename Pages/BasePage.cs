@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Atata;
+﻿using Atata;
 using static Atata.TriggerEvents;
-namespace IFlow.WebTests.Pages
+namespace IFlow.Testing.Pages
 {
     [Screenshot(AfterAnyAction)]
     public abstract class BasePage<TOwner> : Page<TOwner>

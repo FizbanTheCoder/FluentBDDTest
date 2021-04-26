@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
-using Atata;
-using static Atata.TriggerEvents;
+﻿using Atata;
 
-namespace IFlow.WebTests.Pages
+namespace IFlow.Testing.Pages
 {
     using _=HomePage;
     [Url("http://app-iflow-dev-001.azurewebsites.net/")]

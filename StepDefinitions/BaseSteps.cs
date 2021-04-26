@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Atata;
+﻿using Atata;
 using TechTalk.SpecFlow;
 
-namespace IFlow.WebTests.StepDefinitions
+namespace IFlow.Testing.StepDefinitions
 {
     [Binding]
     public abstract class BaseSteps : Steps

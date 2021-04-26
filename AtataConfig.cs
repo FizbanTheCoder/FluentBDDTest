@@ -1,6 +1,6 @@
 ﻿using Atata.Configuration.Json;
 
-namespace IFlow.WebTests
+namespace IFlow.Testing
 {
     public class AtataConfig : JsonConfig<AtataConfig>
     {

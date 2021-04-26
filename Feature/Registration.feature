@@ -24,6 +24,3 @@ Scenario: Creating account with complete data bat dond give aggre by checkbox
 	Given User without accont want create newon registration page
 	And User put complete data but dont mark checkboxes on registration
 	Then User cannot create new accout
-
-Scenario: Registration by API
-	When Registration by api 
