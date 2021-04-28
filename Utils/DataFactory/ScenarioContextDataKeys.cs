@@ -4,7 +4,7 @@ using System.Text;
 
 namespace IFlow.Testing.Utils.DataFactory
 {
-    public static class ScenarioContextDataKeys
+    public  class ScenarioContextDataKeys
     {
 
         public static string UserName => "userName";
