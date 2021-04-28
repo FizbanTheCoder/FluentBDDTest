@@ -2,21 +2,19 @@
 using System.Data.SqlClient;
 using System.Linq;
 using Dapper;
+using static IFlow.Testing.Utils.DataFactory.DataBase;
 
 namespace IFlow.Testing.Utils.DataBase
 {
-    public class DapperExample
+    public class User
     {
-        public static void GetData()
+        public static string GetData(string userId)
         {
-            const string sql = "SELECT UserName FROM dbo.Accounts WHERE Id = '90068944-18C0-4A23-A0DF-BF1C747F162D';";
-            using (var connection = new SqlConnection("Server=tcp:sql-iflow-dev.database.windows.net,1433;Initial Catalog=sqldb-iflow-dev;Persist Security Info=False;User ID=iFlow;Password=Passw0rd!;MultipleActiveResultSets=False; Encrypt=True; TrustServerCertificate=False;Connection Timeout=30;"))
+            var sql = FindUserNameForId(userId);
+            using (var connection = new SqlConnection(DataBaseConnectionString))
             {
                 connection.Open();
-                var affectedRows = connection.Query<string>(sql).FirstOrDefault();
-                
-                Console.WriteLine(affectedRows);
-
+                return connection.Query<string>(sql).FirstOrDefault();
             }
         }
     }
