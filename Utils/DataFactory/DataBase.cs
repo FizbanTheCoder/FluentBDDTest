@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace IFlow.Testing.Utils.DataBase
+namespace IFlow.Testing.Utils.DataFactory
 {
-    class DapperExample
+    class DataBase
     {
     }
 }

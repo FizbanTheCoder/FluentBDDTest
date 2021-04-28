@@ -9,6 +9,7 @@ using Bogus.DataSets;
 using IFlow.Testing.Utils.Api.Accounts;
 using IFlow.Testing.Utils.Api.Auth;
 using IFlow.Testing.Utils.Api.Organizations;
+using IFlow.Testing.Utils.DataBase;
 using IFlow.Testing.Utils.DataFactory;
 using TechTalk.SpecFlow;
 
@@ -30,6 +31,7 @@ namespace IFlow.Testing.StepDefinitions
             var encodedJwtToken = handler.ReadJwtToken(token);
             var sud = encodedJwtToken.Claims.First(claim => claim.Type == "sub").Value;
 
+            DapperExample.GetData();
 
             ScenarioContext.Add(ScenarioContextDataKeys.UserToken, token);
         }
