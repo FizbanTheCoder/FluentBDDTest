@@ -59,13 +59,13 @@ namespace IFlow.Testing.StepDefinitions
         [Then(@"User cannot create new accout")]
         public void ThenUserCannotCreateNewAccout()
         {
-            ScenarioContext.Current.Pending();
+        
         }
 
         [Given(@"User put incomplete data  on registration page")]
         public void GivenUserPutIncompleteDataOnRegistrationPage()
         {
-            ScenarioContext.Current.Pending();
+     
         }
 
         [Given(@"User put complete data but don't mark checkboxes on registration")]
