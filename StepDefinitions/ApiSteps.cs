@@ -21,13 +21,9 @@ namespace IFlow.Testing.StepDefinitions
         [When(@"User send correct data to log in")]
         public async Task WhenUserSendCorrectDataToLogIn()
         {
-            var userName = ScenarioContext.Get<string>(ScenarioContextDataKeys.UserName);
-            var password = ScenarioContext.Get<string>(ScenarioContextDataKeys.Password);
-            
-            var token = await AuthRequests.AuthLoginGetToken(userName, password);
 
-
-            var handler = new JwtSecurityTokenHandler();
+            var token = await AuthRequests.AuthLoginGetToken(GetRandomUserLogin(), GetRandomUserPassword());
+                        var handler = new JwtSecurityTokenHandler();
             var encodedJwtToken = handler.ReadJwtToken(token);
             var sud = encodedJwtToken.Claims.First(claim => claim.Type == "sub").Value;
 
@@ -35,26 +31,12 @@ namespace IFlow.Testing.StepDefinitions
             ScenarioContext.Add(ScenarioContextDataKeys.UserToken, token);
         }
 
-        [When(@"Registration by api")]
+        [When(@"Registration by api"),
+        Given(@"Registration by api")]
         public async Task WhenRegistrationByApi()
         {
-            var userName = UserData.RegistrationUserName;
-            var firstName = UserData.FirsName;
-            var lastName = UserData.LastName;
-            var email = UserData.Email;
-            var password = new Internet().Password(8, 20);
-            var country = UserData.Country;
-            var phoneNumber = UserData.PhoneNumber;
 
-            await Accounts.AccountsCreateAccount(userName, firstName, lastName, email, password, country, phoneNumber);
-
-            ScenarioContext.Add(ScenarioContextDataKeys.UserName, userName);
-            ScenarioContext.Add(ScenarioContextDataKeys.FirstName, firstName);
-            ScenarioContext.Add(ScenarioContextDataKeys.LastName, lastName);
-            ScenarioContext.Add(ScenarioContextDataKeys.Email, email);
-            ScenarioContext.Add(ScenarioContextDataKeys.Password, password);
-            ScenarioContext.Add(ScenarioContextDataKeys.Country, country);
-            ScenarioContext.Add(ScenarioContextDataKeys.PhoneNumber, phoneNumber);
+            await Accounts.AccountsCreateAccount(SetRandomUserLogin(), SetRandomUserFirstName(), SetRandomUserLastName(), SetRandomUserEmail(), SetRandomUserPassword(), SetRandomUserCountry(), SetRandomUserPhoneNumber());
         }
 
         [When(@"I create organization for my user")]
@@ -66,5 +48,10 @@ namespace IFlow.Testing.StepDefinitions
 
 
 
+        [When(@"Accept registration by emain")]
+        public void WhenAcceptRegistrationByEmain()
+        {
+            User.UpdateEmailConformationForAccepted(GetRandomUserLogin());
+        }
     }
 }

@@ -1,8 +1,12 @@
 ﻿using System.Threading.Tasks;
 using Atata;
+using Bogus.DataSets;
 using IFlow.Testing.Pages;
 using IFlow.Testing.Utils.Api.Accounts;
+using IFlow.Testing.Utils.DataBase;
+using IFlow.Testing.Utils.DataFactory;
 using TechTalk.SpecFlow;
+using TechTalk.SpecFlow.Assist.ValueRetrievers;
 
 namespace IFlow.Testing.StepDefinitions
 {
@@ -18,67 +22,31 @@ namespace IFlow.Testing.StepDefinitions
                 .CreateAccountButton.ClickAndGo();
         }
 
-        [When(@"Input all correct data and confirm")]
-        public void WhenInputAllCorrectDataAndConfirm()
-        {
-            On<RegisterPage>().LoginTextInput.Set("UserLogin")
-                .Report.Screenshot()
-                .NameTextInput.Set("UserName")
-                .EMailAddressTextInput.Set("leszek.zielinski@jcommerce.pl")
-                .SurnameTextInput.Set("UserSurname")
-                .PasswordTextInput.Set("SomeRandomPassword")
-                .PhoneNumberTextInput.Set("501081616")
-                .RepeatPasswordTextInput.Set("SomeRandomPassword")
-                .CountrySelect.Set("Poland");
-        }
 
-        [Then(@"User se succed message and get conrfirmation email")]
-        public void ThenUserSeSuccedMessageAndGetConrfirmationEmail()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Then(@"After corfimation user can log in")]
-        public void ThenAfterCorfimationUserCanLogIn()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Given(@"User without accont want create newon registration page")]
-        public void GivenUserWithoutAccontWantCreateNewonRegistrationPage()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Given(@"User put data in wrong format on registration page")]
-        public void GivenUserPutDataInWrongFormatOnRegistrationPage()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Then(@"User cannot create new accout")]
-        public void ThenUserCannotCreateNewAccout()
-        {
-        
-        }
-
-        [Given(@"User put incomplete data  on registration page")]
-        public void GivenUserPutIncompleteDataOnRegistrationPage()
-        {
-     
-        }
 
         [Given(@"User put complete data but don't mark checkboxes on registration")]
-        public void GivenUserPutCompleteDataButDontMarkCheckboxesOnRegistration()
+        public void GivenUserPutCompleteDataButDonTMarkCheckboxesOnRegistration()
         {
-            ScenarioContext.Current.Pending();
+            var password = SetRandomUserPassword();
+            Go.To<MainPage>()
+                .LoginToSystemClickable.ClickAndGo()
+                .CreateAccountButton.ClickAndGo().LoginTextInput.Set(SetRandomUserLogin())
+                .NameTextInput.Set(SetRandomUserFirstName())
+                .EMailAddressTextInput.Set(SetRandomUserEmail())
+                .SurnameTextInput.Set(SetRandomUserLastName())
+                .PasswordTextInput.Set(password)
+                .PhoneNumberTextInput.Set(SetRandomUserPhoneNumber())
+                .RepeatPasswordTextInput.Set(password)
+                .CountrySelect.Set(SetRandomUserCountry());
+
         }
+
+
 
 
         [Given(@"User have active account and is on login screen")]
         public void GivenUserHaveActiveAccountAndIsOnLoginScreen()
         {
-            //Create accont by api
             Go.To<MainPage>().Report.Screenshot().LoginToSystemClickable.ClickAndGo()
                 .LoginButton.IsVisible.Should.BeTrue();
         }
@@ -86,8 +54,8 @@ namespace IFlow.Testing.StepDefinitions
         [When(@"User input credentials on login page")]
         public void WhenUserInputCredentialsOnLoginPage()
         {
-            On<LoginPage>().LoginTextInput.Set("lezi_test")
-                .PassTextInput.Set("RR**^^$$5577tt")
+            Go.To<LoginPage>().LoginTextInput.Set(GetRandomUserLogin())
+                .PassTextInput.Set(GetRandomUserPassword())
                 .LoginButton.ClickAndGo();
         }
 
@@ -96,7 +64,6 @@ namespace IFlow.Testing.StepDefinitions
         {
             On<HomePage>().HomePageText.IsVisible.Should.BeTrue();
         }
-
 
     }
 }
