@@ -17,7 +17,6 @@ namespace IFlow.Testing.Utils.DataFactory
         public static string Country => new Bogus.Faker().Address.Country();
         public static string PhoneNumber => new Faker().Phone.PhoneNumber("#########");
 
-
         public static string Password(this Internet internet, int minLength, int maxLength)
         {
             var r = internet.Random;
@@ -35,6 +34,5 @@ namespace IFlow.Testing.Utils.DataFactory
             return new string(shuffledChars);
         }
 
-        //TODO https://github.com/bchavez/Bogus/issues/219
     }
 }
