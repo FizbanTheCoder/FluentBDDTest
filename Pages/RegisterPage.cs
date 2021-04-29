@@ -29,9 +29,20 @@ namespace IFlow.Testing.Pages
         [FindByXPath("//label/span[text()='Country']//..//..//../select")]
         public Select<_> CountrySelect { get; set; }
 
-        [FindByXPath("//button[@type='submit']/span[text()='Register']")]
+        [FindByXPath("//body/div[@id='root']/div[2]/div[1]/div[1]/div[2]/form[1]/div[6]/button[1]")]
         public Button<_> RegisterButton { get; set; }
 
+
+        [FindByXPath(
+            "//body/div[@id='root']/div[2]/div[1]/div[1]/div[2]/form[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]")]
+        public Clickable<_> FirstCheckBox { get; set; }
+
+        [FindByXPath(
+            "//body/div[@id='root']/div[2]/div[1]/div[1]/div[2]/form[1]/div[5]/div[2]/div[1]/div[1]/div[1]/div[1]")]
+        public Clickable<_> SecondCheckBox { get; set; }
+
+        [FindByXPath("//span[contains(text(),'Your account has been registered successfully.')]")]
+        public Text<_> ConfirmationMessage { get; set; }
     }
 
 }
