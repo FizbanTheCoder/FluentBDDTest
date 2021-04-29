@@ -27,7 +27,6 @@ namespace IFlow.Testing.StepDefinitions
             var encodedJwtToken = handler.ReadJwtToken(token);
             var sud = encodedJwtToken.Claims.First(claim => claim.Type == "sub").Value;
 
-
             ScenarioContext.Add(ScenarioContextDataKeys.UserToken, token);
         }
 

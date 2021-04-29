@@ -16,3 +16,5 @@ Scenario: User login by API
 	When Registration by api 
 	And Accept registration by emain
 	When User send correct data to log in
+	And User input credentials on login page
+	Then User is logged to account

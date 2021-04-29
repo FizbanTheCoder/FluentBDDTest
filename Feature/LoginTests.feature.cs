@@ -155,6 +155,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line 18
  testRunner.When("User send correct data to log in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
+#line 19
+ testRunner.And("User input credentials on login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 20
+ testRunner.Then("User is logged to account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

@@ -65,5 +65,45 @@ namespace IFlow.Testing.StepDefinitions
             On<HomePage>().HomePageText.IsVisible.Should.BeTrue();
         }
 
+        [When(@"User input all data on registration page")]
+        public void WhenUserInputAllDataOnRegistrationPage()
+        {
+            var password = SetRandomUserPassword();
+            Go.To<MainPage>()
+                .LoginToSystemClickable.ClickAndGo()
+                .CreateAccountButton.ClickAndGo().LoginTextInput.Set(SetRandomUserLogin())
+                .NameTextInput.Set(SetRandomUserFirstName())
+                .EMailAddressTextInput.Set(SetRandomUserEmail())
+                .SurnameTextInput.Set(SetRandomUserLastName())
+                .PasswordTextInput.Set(password)
+                .PhoneNumberTextInput.Set(SetRandomUserPhoneNumber())
+                .RepeatPasswordTextInput.Set(password)
+                .CountrySelect.Set(SetRandomUserCountry())
+                .FirstCheckBox.Click()
+                .SecondCheckBox.Click();
+        }
+
+        [When(@"Confirm by click")]
+        public void WhenConfirmByClick()
+        {
+            On<RegisterPage>().RegisterButton
+                .Click();
+        }
+
+        [Then(@"User see confirmation message")]
+        public void ThenUserSeeConfirmationMessage()
+        {
+            On<RegisterPage>().ConfirmationMessage.Should.BeVisible();
+            User.UpdateEmailConformationForAccepted(GetRandomUserLogin());
+        }
+
+        [Then(@"After confirmation email message user can log in")]
+        public void ThenAfterConfirmationEmailMessageUserCanLogIn()
+        {
+            Go.To<LoginPage>().LoginTextInput.Set(GetRandomUserLogin())
+                .PassTextInput.Set(GetRandomUserPassword())
+                .LoginButton.ClickAndGo().HomePageText.IsVisible.Should.BeTrue(); ;
+        }
+
     }
 }
