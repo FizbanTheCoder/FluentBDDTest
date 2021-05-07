@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Linq;
 using Dapper;
+using FluentAssertions;
 using static IFlow.Testing.Utils.DataFactory.DataBase;
 
 namespace IFlow.Testing.Utils.DataBase
@@ -23,6 +24,15 @@ namespace IFlow.Testing.Utils.DataBase
             using var connection = new SqlConnection(DataBaseConnectionString);
             connection.Open();
             var firstOrDefault = connection.Query<string>(sql).FirstOrDefault();
+        }
+
+        public static string UserIsExisting(string userName)
+        {
+
+            var sql = $"SELECT [UserName] FROM [dbo].[Accounts] WHERE [UserName] = '{userName}'";
+            using var connection = new SqlConnection(DataBaseConnectionString);
+            connection.Open();
+            return connection.Query<string>(sql).FirstOrDefault();
         }
     }
 }

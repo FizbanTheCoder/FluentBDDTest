@@ -14,6 +14,7 @@
     <PackageReference Include="Dapper" Version="2.0.78" />
     <PackageReference Include="DapperExtensions.DotnetCore" Version="1.0.1" />
     <PackageReference Include="ExtentReports.Core" Version="1.0.3" />
+    <PackageReference Include="FluentAssertions" Version="5.10.3" />
     <PackageReference Include="Flurl" Version="3.0.1" />
     <PackageReference Include="Flurl.Http" Version="3.0.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />

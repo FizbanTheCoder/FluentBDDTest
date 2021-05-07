@@ -5,8 +5,10 @@ using IFlow.Testing.Pages;
 using IFlow.Testing.Utils.Api.Accounts;
 using IFlow.Testing.Utils.DataBase;
 using IFlow.Testing.Utils.DataFactory;
+using NUnit.Framework;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist.ValueRetrievers;
+using FluentAssertions;
 
 namespace IFlow.Testing.StepDefinitions
 {
@@ -103,6 +105,30 @@ namespace IFlow.Testing.StepDefinitions
             Go.To<LoginPage>().LoginTextInput.Set(GetRandomUserLogin())
                 .PassTextInput.Set(GetRandomUserPassword())
                 .LoginButton.ClickAndGo().HomePageText.IsVisible.Should.BeTrue(); ;
+        }
+
+        [When(@"User don't input all data on registration page and confirm")]
+        public void WhenUserDontInputAllDataOnRegistrationPageAndConfirm()
+        {
+            var password = SetRandomUserPassword();
+            Go.To<MainPage>()
+                .LoginToSystemClickable.ClickAndGo()
+                .CreateAccountButton.ClickAndGo().LoginTextInput.Set(SetRandomUserLogin())
+                .NameTextInput.Set(SetRandomUserFirstName())
+                .EMailAddressTextInput.Set(SetRandomUserEmail())
+                .SurnameTextInput.Set(SetRandomUserLastName())
+                .PasswordTextInput.Set(password)
+                .RepeatPasswordTextInput.Set(password)
+                .CountrySelect.Set(SetRandomUserCountry())
+                .FirstCheckBox.Click()
+                .SecondCheckBox.Click()
+                .RegisterButton.Click();
+        }
+
+        [Then(@"account is not created in database")]
+        public void ThenAccountIsNotCreatedInDatabase()
+        {
+            User.UserIsExisting(GetRandomUserLogin()).Should().BeNull();
         }
 
     }
