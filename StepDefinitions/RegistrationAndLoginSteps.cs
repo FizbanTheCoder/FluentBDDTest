@@ -83,7 +83,6 @@ namespace IFlow.Testing.StepDefinitions
                 .CountrySelect.Set(SetRandomUserCountry())
                 .FirstCheckBox.Click()
                 .SecondCheckBox.Click();
-
         }
 
         [When(@"Confirm by click")]
@@ -105,7 +104,28 @@ namespace IFlow.Testing.StepDefinitions
         {
             Go.To<LoginPage>().LoginTextInput.Set(GetRandomUserLogin())
                 .PassTextInput.Set(GetRandomUserPassword())
-                .LoginButton.ClickAndGo().HomePageText.IsVisible.Should.BeTrue(); ;
+                .LoginButton.ClickAndGo().HomePageText.IsVisible.Should.BeTrue();
+        }
+
+        [When(@"user input incorrect data on login page")]
+        public void WhenUserInputIncorrectDataOnLoginPage()
+        {
+            Go.To<LoginPage>().LoginTextInput.SetRandom()
+                .PassTextInput.SetRandom()
+                .LoginButton.Click();
+        }
+
+        [Then(@"user is not logged")]
+        public void ThenUserIsNotLogged()
+        {
+            On<LoginPage>().LoginButton.Should.BeVisible();
+        }
+
+        [Then(@"error messages are displayed")]
+        public void ThenErrorMessagesAreDisplayed()
+        {
+            On<LoginPage>().LoginInputLabel.Attributes["color"].Should.Equal("error")
+            .PasswordInputLabel.Attributes["color"].Should.Equal("error");
         }
 
         [When(@"User don't input all data on registration page and confirm")]
