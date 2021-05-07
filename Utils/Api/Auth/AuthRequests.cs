@@ -8,7 +8,7 @@ namespace IFlow.Testing.Utils.Api.Auth
     {
         public static async Task<string> AuthLoginGetToken(string userNameOrEmail, string password)
         {
-            return (await ApiAddresses.AuthLoginToAccount
+            return (await ApiAddresses.AuthLoginToAccountApiUrl
                 .PostJsonAsync(new {UsernameOrEmail = userNameOrEmail, Password = password })
                 .ReceiveJson()).accessToken.token;
         }

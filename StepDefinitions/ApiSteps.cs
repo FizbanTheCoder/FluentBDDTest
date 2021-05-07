@@ -26,7 +26,7 @@ namespace IFlow.Testing.StepDefinitions
                         var handler = new JwtSecurityTokenHandler();
             var encodedJwtToken = handler.ReadJwtToken(token);
             var sud = encodedJwtToken.Claims.First(claim => claim.Type == "sub").Value;
-
+            ScenarioContext.Add(ScenarioContextDataKeys.UserId, sud);
             ScenarioContext.Add(ScenarioContextDataKeys.UserToken, token);
         }
 
@@ -42,13 +42,16 @@ namespace IFlow.Testing.StepDefinitions
         public async Task WhenICreateOrganizationForMyUser()
         {
             var userToken = ScenarioContext.Get<string>(ScenarioContextDataKeys.UserToken);
-            await Organizations.CreateOrganizationForUser(userToken);
+            var userId = ScenarioContext.Get<string>(ScenarioContextDataKeys.UserId);
+            var organizationId = await Organizations.CreateOrganizationForUser(userToken, SetRandomCompanyName(), SetRandomCompanyEmail(), SetCompanyPhoneNumber(), userId,
+                SetCompanyStreet(), SetCompanyCountry(), SetCompanyCity(), SetCompanyPostalCode(), SetCompanyProvince());
+            ScenarioContext.Set(ScenarioContextDataKeys.OrganizationId, organizationId);
         }
 
 
 
-        [When(@"Accept registration by emain")]
-        public void WhenAcceptRegistrationByEmain()
+        [When(@"Accept registration by email")]
+        public void WhenAcceptRegistrationByEmail()
         {
             User.UpdateEmailConformationForAccepted(GetRandomUserLogin());
         }

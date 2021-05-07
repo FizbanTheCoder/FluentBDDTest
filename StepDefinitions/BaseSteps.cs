@@ -101,6 +101,101 @@ namespace IFlow.Testing.StepDefinitions
         }
 
 
+        protected string SetRandomCompanyName()
+        {
+            var companyName = CompanyData.Name;
+            ScenarioContext.Add(ScenarioContextDataKeys.CompanyName, companyName);
+            return companyName;
 
+        }
+
+        protected string GetRandomCompanyName()
+        {
+            return ScenarioContext.Get<string>(ScenarioContextDataKeys.CompanyName);
+        }
+
+        protected string SetRandomCompanyEmail()
+        {
+            var companyEmail = CompanyData.Email;
+            ScenarioContext.Add(ScenarioContextDataKeys.CompanyEmail, companyEmail);
+            return companyEmail;
+        }
+
+        protected string GetCompanyEmail()
+        {
+            return ScenarioContext.Get<string>(ScenarioContextDataKeys.CompanyEmail);
+        }
+
+        protected string SetCompanyPhoneNumber()
+        {
+            var companyPhoneNumber = CompanyData.PhoneNumber;
+            ScenarioContext.Add(ScenarioContextDataKeys.CompanyPhoneNumber, companyPhoneNumber);
+            return companyPhoneNumber;
+        }
+
+        protected string GetCompanyPhoneNumber()
+        {
+            return ScenarioContext.Get<string>(ScenarioContextDataKeys.CompanyPhoneNumber);
+        }
+
+        protected string SetCompanyCountry()
+        {
+            var companyCountry = CompanyData.Country;
+            ScenarioContext.Add(ScenarioContextDataKeys.CompanyCountry, companyCountry);
+            return companyCountry;
+        }
+
+        protected string GetCompanyCountry()
+        {
+            return ScenarioContext.Get<string>(ScenarioContextDataKeys.CompanyCountry);
+        }
+
+        protected string SetCompanyCity()
+        {
+            var companyCity = CompanyData.City;
+            ScenarioContext.Add(ScenarioContextDataKeys.CompanyCity, companyCity);
+            return companyCity;
+        }
+
+        protected string GetCompanyCity()
+        {
+            return ScenarioContext.Get<string>(ScenarioContextDataKeys.CompanyCity);
+        }
+
+        protected string SetCompanyPostalCode()
+        {
+            var companyPostalCode = CompanyData.PostalCode;
+            ScenarioContext.Add(ScenarioContextDataKeys.CompanyPostalCode, companyPostalCode);
+            return companyPostalCode;
+        }
+
+        protected string GetCompanyPostalCode()
+        {
+            return ScenarioContext.Get<string>(ScenarioContextDataKeys.CompanyPostalCode);
+        }
+
+        protected string SetCompanyProvince()
+        {
+            var companyProvince = CompanyData.Province;
+            ScenarioContext.Add(ScenarioContextDataKeys.CompanyProvince, companyProvince);
+            return companyProvince;
+        }
+
+        protected string GetCompanyProvince()
+        {
+            return ScenarioContext.Get<string>(ScenarioContextDataKeys.CompanyProvince);
+        }
+
+        protected string SetCompanyStreet()
+        {
+            var companyStreet = CompanyData.Street;
+            ScenarioContext.Add(ScenarioContextDataKeys.CompanyStreet, companyStreet);
+            return companyStreet;
+        }
+
+        protected string GetCompanyStreet()
+        {
+            return ScenarioContext.Get<string>(ScenarioContextDataKeys.CompanyStreet);
+        }
     }
 }

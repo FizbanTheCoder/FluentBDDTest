@@ -7,9 +7,8 @@ namespace IFlow.Testing.Utils.Api.Accounts
     public static class Accounts
     {
         public static async Task AccountsCreateAccount(string userName, string firstName
-            , string lastName, string email, string password, string country, string phoneNumber)
-        {
-          await ApiAddresses.AccountsRegistrationApi
+            , string lastName, string email, string password, string country, string phoneNumber) {
+          await ApiAddresses.AccountsRegistrationApiUrl
                 .PostJsonAsync(new
                 {
                     UserName = userName, 

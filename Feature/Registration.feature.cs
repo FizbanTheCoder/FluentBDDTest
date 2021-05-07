@@ -76,13 +76,17 @@ namespace IFlow.Testing.Feature
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Correct registration process")]
         [NUnit.Framework.CategoryAttribute("TEST_IB-142")]
+        [NUnit.Framework.CategoryAttribute("backEnd")]
+        [NUnit.Framework.CategoryAttribute("frontEnd")]
         public virtual void CorrectRegistrationProcess()
         {
             string[] tagsOfScenario = new string[] {
-                    "TEST_IB-142"};
+                    "TEST_IB-142",
+                    "backEnd",
+                    "frontEnd"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Correct registration process", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 7
+#line 9
  this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -102,16 +106,16 @@ namespace IFlow.Testing.Feature
             else
             {
                 this.ScenarioStart();
-#line 8
+#line 10
   testRunner.When("User input all data on registration page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 9
+#line 11
   testRunner.And("Confirm by click", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 10
+#line 12
   testRunner.Then("User see confirmation message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 11
+#line 13
   testRunner.And("After confirmation email message user can log in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

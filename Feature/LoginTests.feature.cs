@@ -107,7 +107,7 @@ this.ScenarioInitialize(scenarioInfo);
   testRunner.Given("Registration by api", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 10
-  testRunner.When("Accept registration by emain", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.When("Accept registration by email", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 11
   testRunner.And("User input credentials on login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -150,7 +150,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("Registration by api", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 17
- testRunner.And("Accept registration by emain", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Accept registration by email", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 18
  testRunner.When("User send correct data to log in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

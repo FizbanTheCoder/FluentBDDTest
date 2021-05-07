@@ -4,6 +4,8 @@
 	I want to create account
 
 	@TEST_IB-142
+	@backEnd
+	@frontEnd
 	Scenario: Correct registration process
 		When User input all data on registration page
 		And Confirm by click 

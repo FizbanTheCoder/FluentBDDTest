@@ -83,6 +83,7 @@ namespace IFlow.Testing.StepDefinitions
                 .CountrySelect.Set(SetRandomUserCountry())
                 .FirstCheckBox.Click()
                 .SecondCheckBox.Click();
+
         }
 
         [When(@"Confirm by click")]
