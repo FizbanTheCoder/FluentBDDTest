@@ -1,6 +1,7 @@
 name: Tests Run
 on: 
-  repository_dispatch
+  repository_dispatch:
+    types: [be_deployed, fe_deployed]
 jobs:
   build:
     runs-on: ubuntu-latest
