@@ -10,3 +10,5 @@ bin/
 Report/
 
 Log/log.log
+
+*.feature.cs
