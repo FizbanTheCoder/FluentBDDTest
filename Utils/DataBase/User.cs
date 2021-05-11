@@ -18,7 +18,6 @@ namespace IFlow.Testing.Utils.DataBase
 
         public static void UpdateEmailConformationForAccepted(string userId)
         {
-
             var sql = $"UPDATE [dbo].[Accounts] SET [EmailConfirmed] = 1 WHERE [UserName] = '{userId}'";
             using var connection = new SqlConnection(DataBaseConnectionString);
             connection.Open();
@@ -27,8 +26,14 @@ namespace IFlow.Testing.Utils.DataBase
 
         public static string UserIsExisting(string userName)
         {
-
             var sql = $"SELECT [UserName] FROM [dbo].[Accounts] WHERE [UserName] = '{userName}'";
+            using var connection = new SqlConnection(DataBaseConnectionString);
+            connection.Open();
+            return connection.Query<string>(sql).FirstOrDefault();
+        }
+        public static string ProjectIsExisting(string projectId)
+        {
+            var sql = $"SELECT [Id] FROM [dbo].[Projects] WHERE [Id] = '{projectId}'";
             using var connection = new SqlConnection(DataBaseConnectionString);
             connection.Open();
             return connection.Query<string>(sql).FirstOrDefault();

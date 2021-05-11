@@ -12,8 +12,10 @@ namespace IFlow.Testing.Utils.DataFactory
         public static string AccountsRegistrationApiUrl => BaseApiUrl + "Accounts";
         public static string AuthLoginToAccountApiUrl => BaseApiUrl + "Auth";
         public static string OrganizationsApiUrl => BaseApiUrl + "Organizations";
-
         public static string InvestmentsApiUrl => BaseApiUrl + "Investments";
+        public static string BusinessUnitApiUrl => BaseApiUrl + "BusinessUnits";
+        public static string GetContractTypes(string organizationId) => BaseApiUrl + $"ContractTypes?organizationId={organizationId}&pageNumber=1&pageSize=10";
+        public static string GetProjectStages(string organizationId) => BaseApiUrl + $"ProjectStages?organizationId={organizationId}&pageNumber=1&pageSize=10";
     }
 
 }

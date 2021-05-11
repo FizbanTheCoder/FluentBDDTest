@@ -197,5 +197,17 @@ namespace IFlow.Testing.StepDefinitions
         {
             return ScenarioContext.Get<string>(ScenarioContextDataKeys.CompanyStreet);
         }
+
+        protected string SetCompanyInvestment()
+        {
+            var companyInvestment = InvestmentData.Name;
+            ScenarioContext.Add(ScenarioContextDataKeys.InvestmentName, companyInvestment);
+            return companyInvestment;
+
+        }
+        protected string GetCompanyInvestment()
+        {
+            return ScenarioContext.Get<string>(ScenarioContextDataKeys.InvestmentName);
+        }
     }
 }

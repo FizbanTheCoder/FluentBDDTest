@@ -22,10 +22,14 @@ namespace IFlow.Testing.Utils.DataFactory
         public static string CompanyCity => "companyCity";
         public static string CompanyPostalCode => "companyPostalCode";
         public static string CompanyProvince => "companyProvince";
-
         public static string CompanyStreet => "companyStreet";
-
         public static string UserId => "userId";
         public static string OrganizationId => "organizationId";
+        public static string BusinessUnitId => "businessUnitId";
+        public static string ContractTypeId => "contractTypeId";
+        public static string ProjectStageId => "projectStageId";
+        public static string InvestmentName => "investmentName";
+        public static string InvestmentId => "investmentId";
+
     }
 }

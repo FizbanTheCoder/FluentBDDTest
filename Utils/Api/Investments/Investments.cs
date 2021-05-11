@@ -10,14 +10,14 @@ namespace IFlow.Testing.Utils.Api.Investments
 {
     public static class Investments
     {
-        public static async Task<string> CreateInvestment(string userToken, string investmentName ,string organizationId)
+        public static async Task<string> PostCreateInvestment(string userToken, string investmentName ,string organizationId)
         {
             return (await ApiAddresses.InvestmentsApiUrl
                 .WithOAuthBearerToken(userToken)
                 .PostJsonAsync(new
                     {
-                        Name = "",
-                        OrganitionId = organizationId
+                        name = investmentName,
+                        organizationId = organizationId
                     }
                 ).ReceiveJson()).id;
         }
