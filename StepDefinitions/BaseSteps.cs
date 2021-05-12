@@ -209,5 +209,148 @@ namespace IFlow.Testing.StepDefinitions
         {
             return ScenarioContext.Get<string>(ScenarioContextDataKeys.InvestmentName);
         }
+
+        protected string SetProjectName()
+        {
+            var projectName = ProjectData.ProjectName;
+            ScenarioContext.Add(ScenarioContextDataKeys.ProjectName, projectName);
+            return projectName;
+        }
+        protected string GetProjectName()
+        {
+            return ScenarioContext.Get<string>(ScenarioContextDataKeys.ProjectName);
+        }
+        protected string SetProjectStreet()
+        {
+            var projectStreet = ProjectData.ProjectStreet;
+            ScenarioContext.Add(ScenarioContextDataKeys.ProjectStreet, projectStreet);
+            return projectStreet;
+        }
+        protected string GetProjectStreet()
+        {
+            return ScenarioContext.Get<string>(ScenarioContextDataKeys.ProjectStreet);
+        }
+        protected string SetProjectCountry()
+        {
+            var projectCountry = ProjectData.ProjectCountry;
+            ScenarioContext.Add(ScenarioContextDataKeys.ProjectCountry, projectCountry);
+            return projectCountry;
+        }
+        protected string GetProjectCountry()
+        {
+            return ScenarioContext.Get<string>(ScenarioContextDataKeys.ProjectCountry);
+        }
+        protected string SetProjectCity()
+        {
+            var projectCity = ProjectData.ProjectCity;
+            ScenarioContext.Add(ScenarioContextDataKeys.ProjectCity, projectCity);
+            return projectCity;
+        }
+        protected string GetProjectCity()
+        {
+            return ScenarioContext.Get<string>(ScenarioContextDataKeys.ProjectCity);
+        }
+        protected string SetProjectDescription()
+        {
+            var projectDescription = ProjectData.ProjectDescription;
+            ScenarioContext.Add(ScenarioContextDataKeys.ProjectDescription, projectDescription);
+            return projectDescription;
+        }
+        protected string GetProjectDescription()
+        {
+            return ScenarioContext.Get<string>(ScenarioContextDataKeys.ProjectDescription);
+        }
+        protected string SetProjectPostalCode()
+        {
+            var projectPostalCode = ProjectData.ProjectPostalCode;
+            ScenarioContext.Add(ScenarioContextDataKeys.ProjectPostalCode, projectPostalCode);
+            return projectPostalCode;
+        }
+        protected string GetProjectPostalCode()
+        {
+            return ScenarioContext.Get<string>(ScenarioContextDataKeys.ProjectPostalCode);
+        }
+        protected string SetProjectProvince()
+        {
+            var projectProvince = ProjectData.ProjectProvince;
+            ScenarioContext.Add(ScenarioContextDataKeys.ProjectProvince, projectProvince);
+            return projectProvince;
+        }
+        protected string GetProjectProvince()
+        {
+            return ScenarioContext.Get<string>(ScenarioContextDataKeys.ProjectDescription);
+        }
+        protected int SetProjectValue()
+        {
+            var projectValue = ProjectData.ProjectValue;
+            ScenarioContext.Add(ScenarioContextDataKeys.ProjectValue, projectValue);
+            return projectValue;
+        }
+        protected int GetProjectValue()
+        {
+            return ScenarioContext.Get<int>(ScenarioContextDataKeys.ProjectValue);
+        }
+        protected string SetProjectCurrency()
+        {
+            var projectCurrency = ProjectData.ProjectCurrency;
+            ScenarioContext.Add(ScenarioContextDataKeys.ProjectCurrency, projectCurrency);
+            return projectCurrency;
+        }
+        protected int GetProjectCurrency()
+        {
+            return ScenarioContext.Get<int>(ScenarioContextDataKeys.ProjectCurrency);
+        }
+        protected string SetProjectType()
+        {
+            var projectType = ProjectData.ProjectType;
+            ScenarioContext.Add(ScenarioContextDataKeys.ProjectType, projectType);
+            return projectType;
+        }
+        protected int GetProjectType()
+        {
+            return ScenarioContext.Get<int>(ScenarioContextDataKeys.ProjectType);
+        }
+        protected string SetProjectConstructionType()
+        {
+            var projectConstructionType = ProjectData.ProjectConstructionType;
+            ScenarioContext.Add(ScenarioContextDataKeys.ProjectConstructionType, projectConstructionType);
+            return projectConstructionType;
+        }
+        protected int GetProjectConstructionType()
+        {
+            return ScenarioContext.Get<int>(ScenarioContextDataKeys.ProjectConstructionType);
+        }
+        protected string SetProjectNumber()
+        {
+            var projectNumber = ProjectData.ProjectNumber;
+            ScenarioContext.Add(ScenarioContextDataKeys.ProjectNumber, projectNumber);
+            return projectNumber;
+        }
+        protected int GetProjectNumber()
+        {
+            return ScenarioContext.Get<int>(ScenarioContextDataKeys.ProjectNumber);
+        }
+
+        protected string SetProjectTimeZone()
+        {
+            var projectTimeZone = ProjectData.ProjectTimeZone;
+            ScenarioContext.Add(ScenarioContextDataKeys.ProjectTimeZone, projectTimeZone);
+            return projectTimeZone;
+        }
+        protected int GetProjectTimeZone()
+        {
+            return ScenarioContext.Get<int>(ScenarioContextDataKeys.ProjectTimeZone);
+        }
+        protected string SetProjectLanguage()
+        {
+            var projectLanguage = ProjectData.ProjectLanguage;
+            ScenarioContext.Add(ScenarioContextDataKeys.ProjectLanguage, projectLanguage);
+            return projectLanguage;
+        }
+        protected int GetProjectLanguage()
+        {
+            return ScenarioContext.Get<int>(ScenarioContextDataKeys.ProjectLanguage);
+        }
+
     }
 }

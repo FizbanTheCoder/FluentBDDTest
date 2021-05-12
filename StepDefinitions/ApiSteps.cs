@@ -15,6 +15,9 @@ using TechTalk.SpecFlow;
 using IFlow.Testing.Utils.Api.BusinessUnit;
 using IFlow.Testing.Utils.Api.ContractType;
 using IFlow.Testing.Utils.Api.Investments;
+using IFlow.Testing.Utils.Api.Projects;
+using IFlow.Testing.Utils.Api.ProjectStage;
+using FluentAssertions;
 
 
 namespace IFlow.Testing.StepDefinitions
@@ -108,26 +111,56 @@ namespace IFlow.Testing.StepDefinitions
             var userId = ScenarioContext.Get<string>(ScenarioContextDataKeys.UserId);
             var organizationId = await Organizations.CreateOrganizationForUser(userToken, SetRandomCompanyName(), SetRandomCompanyEmail(), SetCompanyPhoneNumber(), userId,
             SetCompanyStreet(), SetCompanyCountry(), SetCompanyCity(), SetCompanyPostalCode(), SetCompanyProvince());
-            ScenarioContext.Set<string>(ScenarioContextDataKeys.OrganizationId, organizationId);
+            ScenarioContext.Add(ScenarioContextDataKeys.OrganizationId, organizationId);
             var investmentId = await Investments.PostCreateInvestment(userToken, InvestmentData.Name, organizationId);
-            ScenarioContext.Set<string>(ScenarioContextDataKeys.InvestmentId, investmentId);
+            ScenarioContext.Add(ScenarioContextDataKeys.InvestmentId, investmentId);
             var businessUnitId = await BusinessUnit.CreateBusinessUnit(userToken, BusinessUnitData.Name, organizationId);
-            ScenarioContext.Set(ScenarioContextDataKeys.BusinessUnitId, businessUnitId);
+            ScenarioContext.Add(ScenarioContextDataKeys.BusinessUnitId, businessUnitId);
             var contractTypeId = await ContractType.GetContractTypeId(userToken, organizationId);
-            ScenarioContext.Set(ScenarioContextDataKeys.ContractTypeId, contractTypeId);
+            ScenarioContext.Add(ScenarioContextDataKeys.ContractTypeId, contractTypeId);
             var projectStageId = await ProjectStage.GetProjectStageId(userToken, organizationId);
-            ScenarioContext.Set(ScenarioContextDataKeys.ProjectStageId, projectStageId);
+            ScenarioContext.Add(ScenarioContextDataKeys.ProjectStageId, projectStageId);
 
         }
 
         [When(@"User creates a new project")]
-        public void WhenUserCreatesANewProject()
+        public async Task WhenUserCreatesANewProject()
         {
+            var userToken = ScenarioContext.Get<string>(ScenarioContextDataKeys.UserToken);
+            var organizationId = ScenarioContext.Get<string>(ScenarioContextDataKeys.OrganizationId);
+            var investmentId = ScenarioContext.Get<string>(ScenarioContextDataKeys.InvestmentId);
+            var businessUnitId = ScenarioContext.Get<string>(ScenarioContextDataKeys.BusinessUnitId);
+            var contractTypeId = ScenarioContext.Get<string>(ScenarioContextDataKeys.ContractTypeId);
+            var projectStageId = ScenarioContext.Get<string>(ScenarioContextDataKeys.ProjectStageId);
+            var projectId = await Projects.PostCreateNewProject(userToken,
+                SetProjectName(),
+                SetProjectDescription(),
+                investmentId,
+                SetProjectType(),
+                SetProjectConstructionType(),
+                SetProjectValue(),
+                SetProjectCurrency(),
+                ProjectData.ProjectStartDate(),
+                ProjectData.ProjectEndDate(),
+                SetProjectNumber(),
+                SetProjectTimeZone(),
+                SetProjectLanguage(),
+                businessUnitId,
+                contractTypeId,
+                SetProjectStreet(),
+                SetProjectCountry(),
+                SetProjectCity(),
+                SetProjectPostalCode(),
+                SetProjectProvince(),
+                organizationId, projectStageId);
+            ScenarioContext.Add(ScenarioContextDataKeys.ProjectId, projectId);
         }
 
         [Then(@"new project is created in database")]
         public void ThenNewProjectIsCreatedInDatabase()
         {
+            var projectId = ScenarioContext.Get<string>(ScenarioContextDataKeys.ProjectId);
+            User.ProjectIsExisting(projectId).Should().NotBeNull();
         }
 
 

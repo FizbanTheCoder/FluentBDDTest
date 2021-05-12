@@ -33,10 +33,11 @@ namespace IFlow.Testing.Utils.DataBase
         }
         public static string ProjectIsExisting(string projectId)
         {
-            var sql = $"SELECT [Id] FROM [dbo].[Projects] WHERE [Id] = '{projectId}'";
+            var sql = $"SELECT [Name] FROM [dbo].[Projects] WHERE [Id] = '{projectId}'";
             using var connection = new SqlConnection(DataBaseConnectionString);
             connection.Open();
-            return connection.Query<string>(sql).FirstOrDefault();
+            var message = connection.Query<string>(sql).FirstOrDefault();
+            return message;
         }
     }
 }

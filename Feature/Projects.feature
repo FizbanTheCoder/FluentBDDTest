@@ -5,7 +5,7 @@
 	
 	@TEST_IB-202
 	Scenario: User want log in with active account
-		And Create and login user by Api
+		Given Create and login user by Api
 		And user have contract type, project stage, organization, investment and business unit created
-	##	When User creates a new project
-	##	Then new project is created in database
+		When User creates a new project
+		Then new project is created in database

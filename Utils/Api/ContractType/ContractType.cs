@@ -12,7 +12,7 @@ namespace IFlow.Testing.Utils.Api.ContractType
     {
         public static async Task<string> GetContractTypeId(string userToken, string organizationId)
         {
-            return (await ApiAddresses.GetContractTypes(organizationId)
+            return (await ApiAddresses.GetContractTypesApiUrl(organizationId)
                 .WithOAuthBearerToken(userToken)
                 .GetJsonAsync()).items[0].id;           
         }

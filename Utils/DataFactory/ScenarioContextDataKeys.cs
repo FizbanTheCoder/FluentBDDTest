@@ -30,6 +30,20 @@ namespace IFlow.Testing.Utils.DataFactory
         public static string ProjectStageId => "projectStageId";
         public static string InvestmentName => "investmentName";
         public static string InvestmentId => "investmentId";
-
+        public static string ProjectId => "projectId";
+        public static string ProjectName => "projectName";
+        public static string ProjectDescription => "projectDescription";
+        public static string ProjectStreet => "projectStreet";
+        public static string ProjectCountry => "projectCountry";
+        public static string ProjectCity => "projectCity";
+        public static string ProjectPostalCode => "projectPostalCode";
+        public static string ProjectProvince => "projectProvince";
+        public static string ProjectValue => "projectValue";
+        public static string ProjectCurrency => "projectCurrency";
+        public static string ProjectType => "projectType";
+        public static string ProjectConstructionType => "projectConstructionType";
+        public static string ProjectNumber => "projectNumber";
+        public static string ProjectTimeZone => "projectTimeZone";
+        public static string ProjectLanguage => "projectLanguage";
     }
 }
