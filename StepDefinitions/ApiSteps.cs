@@ -1,8 +1,13 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
+using Atata;
+using Bogus.DataSets;
+using FluentAssertions;
+using HtmlAgilityPack;
 using IFlow.Testing.Utils.Api.Accounts;
 using IFlow.Testing.Utils.Api.Auth;
+using IFlow.Testing.Utils.Api.MailHog;
 using IFlow.Testing.Utils.Api.Organizations;
 using IFlow.Testing.Utils.DataBase;
 using IFlow.Testing.Utils.DataFactory;
@@ -20,7 +25,8 @@ namespace IFlow.Testing.StepDefinitions
         [When(@"User send correct data to log in")]
         public async Task WhenUserSendCorrectDataToLogIn()
         {
-
+            await Accounts.AccountsCreateAccount(SetRandomUserLogin(), SetRandomUserFirstName(), SetRandomUserLastName(), SetRandomUserEmail(), SetRandomUserPassword(), SetRandomUserCountry(), SetRandomUserPhoneNumber());
+            User.UpdateEmailConformationForAccepted(GetRandomUserLogin());
             var token = await AuthRequests.AuthLoginGetToken(GetRandomUserLogin(), GetRandomUserPassword());
                         var handler = new JwtSecurityTokenHandler();
             var encodedJwtToken = handler.ReadJwtToken(token);
@@ -33,7 +39,6 @@ namespace IFlow.Testing.StepDefinitions
         Given(@"Registration by api")]
         public async Task WhenRegistrationByApi()
         {
-
             await Accounts.AccountsCreateAccount(SetRandomUserLogin(), SetRandomUserFirstName(), SetRandomUserLastName(), SetRandomUserEmail(), SetRandomUserPassword(), SetRandomUserCountry(), SetRandomUserPhoneNumber());
         }
 
@@ -125,6 +130,12 @@ namespace IFlow.Testing.StepDefinitions
         {
         }
 
-    }
 
+        [When(@"Get email")]
+        public async Task WhenGetEmail()
+        {
+            var bodyValue = await GetEmails.GetBodyValueForCurrentEmail(GetRandomUserEmail());
+            bodyValue.Should().ContainAll("To finish","please click","the below", "buton to verify","your account");
+        }
+    }
 }

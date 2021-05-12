@@ -149,6 +149,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 15
  testRunner.When("Registration by api", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
+#line 18
 #line 16
  testRunner.And("Accept registration by email", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
