@@ -33,4 +33,4 @@ jobs:
       run: |
         echo ::set-output name=XRAY_TOKEN::$(curl -H "Content-Type: application/json" -X POST --data "{ \"client_id\": \"$CLIENT_ID\",\"client_secret\": \"$CLIENT_SECRET\" }" https://xray.cloud.xpand-it.com/api/v2/authenticate| tr -d '"')
     - name: Submit results to Xray
-      run: 'curl -H "Content-Type: text/xml" -H "Authorization: Bearer ${{ steps.xray-token.outputs.XRAY_TOKEN }}" --data @/home/runner/work/IFLOW/IFLOW/Reports/test-result.xml  "https://xray.cloud.xpand-it.com/api/v2/import/execution/nunit?projectKey=IB"'
+      run: 'curl -H "Content-Type: text/xml" -H "Authorization: Bearer ${{ steps.xray-token.outputs.XRAY_TOKEN }}" --data @/home/runner/work/IFLOW.testing/IFLOW.testing/IFLOW.testing/IFLOW.testing/Reports/test-result.xml  "https://xray.cloud.xpand-it.com/api/v2/import/execution/nunit?projectKey=IB"'
