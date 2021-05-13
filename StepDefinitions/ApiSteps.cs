@@ -30,7 +30,7 @@ namespace IFlow.Testing.StepDefinitions
             await Accounts.AccountsCreateAccount(SetRandomUserLogin(), SetRandomUserFirstName(), SetRandomUserLastName(), SetRandomUserEmail(), SetRandomUserPassword(), SetRandomUserCountry(), SetRandomUserPhoneNumber());
             User.UpdateEmailConformationForAccepted(GetRandomUserLogin());
             var token = await AuthRequests.AuthLoginGetToken(GetRandomUserLogin(), GetRandomUserPassword());
-                        var handler = new JwtSecurityTokenHandler();
+            var handler = new JwtSecurityTokenHandler();
             var encodedJwtToken = handler.ReadJwtToken(token);
             var sud = encodedJwtToken.Claims.First(claim => claim.Type == "sub").Value;
             ScenarioContext.Add(ScenarioContextDataKeys.UserId, sud);
@@ -54,9 +54,8 @@ namespace IFlow.Testing.StepDefinitions
             ScenarioContext.Set(ScenarioContextDataKeys.OrganizationId, organizationId);
         }
 
-
-
-        [When(@"Accept registration by email")]
+        [When(@"Accept registration by email"),
+        Given(@"Accept registration by email")]
         public void WhenAcceptRegistrationByEmail()
         {
             User.UpdateEmailConformationForAccepted(GetRandomUserLogin());
@@ -103,9 +102,7 @@ namespace IFlow.Testing.StepDefinitions
 
         [Given(@"user have contract type, project stage, organization, investment and business unit created")]
         public async Task GivenUserHaveContractTypeProjectStageOrganizationInvestmentAndBusinessUnitCreated()
-
         {
-         
             var userToken = ScenarioContext.Get<string>(ScenarioContextDataKeys.UserToken);
             var userId = ScenarioContext.Get<string>(ScenarioContextDataKeys.UserId);
             var organizationId = await Organizations.CreateOrganizationForUser(userToken, SetRandomCompanyName(), SetRandomCompanyEmail(), SetCompanyPhoneNumber(), userId,

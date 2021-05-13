@@ -4,7 +4,7 @@ using System.Text;
 
 namespace IFlow.Testing.Utils.DataFactory
 {
-    public  class ScenarioContextDataKeys
+    public class ScenarioContextDataKeys
     {
 
         public static string UserName => "userName";
@@ -35,6 +35,7 @@ namespace IFlow.Testing.Utils.DataFactory
         public static string ProjectDescription => "projectDescription";
         public static string ProjectStreet => "projectStreet";
         public static string ProjectCountry => "projectCountry";
+        public static string ProjectCountryCode => "projectCountryCode";
         public static string ProjectCity => "projectCity";
         public static string ProjectPostalCode => "projectPostalCode";
         public static string ProjectProvince => "projectProvince";
@@ -45,5 +46,6 @@ namespace IFlow.Testing.Utils.DataFactory
         public static string ProjectNumber => "projectNumber";
         public static string ProjectTimeZone => "projectTimeZone";
         public static string ProjectLanguage => "projectLanguage";
+        public static string ProjectLanguageCode => "projectLanguageCode";
     }
 }

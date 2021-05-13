@@ -10,7 +10,7 @@ namespace IFlow.Testing.Pages
         [FindByXPath("//a[@href='/register']/button[@type='submit']")]
         public Button<RegisterPage, _> CreateAccountButton { get; set; }
 
-        [FindByXPath("//span[text()='Login * *']/..//../..//input[@type='text']")]
+        [FindByXPath("//span[text()='Login *']/..//../..//input[@type='text']")]
         public TextInput<_> LoginTextInput { get; set; }
 
         [FindByXPath("//input[@type='password']")]

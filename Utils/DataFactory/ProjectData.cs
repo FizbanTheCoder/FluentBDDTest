@@ -20,6 +20,8 @@ namespace IFlow.Testing.Utils.DataFactory
         public static string ProjectNumber => new Bogus.Faker().Company.Random.Word();
         public static string ProjectTimeZone => new Bogus.Faker().Company.Random.Word();
         public static string ProjectLanguage => new Bogus.Faker().Company.Random.Word();
+        public static string ProjectLanguageCode => new Bogus.Faker().Address.CountryCode();
+        public static string ProjectCountryCode => new Bogus.Faker().Address.CountryCode();
 
         public static string ProjectStartDate()
         {

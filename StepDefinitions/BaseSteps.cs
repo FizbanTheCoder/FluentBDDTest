@@ -352,5 +352,28 @@ namespace IFlow.Testing.StepDefinitions
             return ScenarioContext.Get<int>(ScenarioContextDataKeys.ProjectLanguage);
         }
 
+        protected string SetProjectCountryCode()
+        {
+            var projectCountryCode = ProjectData.ProjectCountryCode;
+            ScenarioContext.Add(ScenarioContextDataKeys.ProjectCountryCode, projectCountryCode);
+            return projectCountryCode;
+        }
+
+        protected string GetProjectCountryCode()
+        {
+            return ScenarioContext.Get<string>(ScenarioContextDataKeys.ProjectCountryCode);
+        }
+
+        protected string SetProjectLanguageCode()
+        {
+            var projectLanguageCode = ProjectData.ProjectLanguageCode;
+            ScenarioContext.Add(ScenarioContextDataKeys.ProjectLanguageCode, projectLanguageCode);
+            return projectLanguageCode;
+        }
+
+        protected string GetProjectLanguageCode()
+        {
+            return ScenarioContext.Get<string>(ScenarioContextDataKeys.ProjectLanguageCode);
+        }
     }
 }

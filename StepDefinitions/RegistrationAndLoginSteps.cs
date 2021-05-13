@@ -53,7 +53,8 @@ namespace IFlow.Testing.StepDefinitions
                 .LoginButton.IsVisible.Should.BeTrue();
         }
 
-        [When(@"User input credentials on login page")]
+        [When(@"User input credentials on login page"),
+            Given(@"User input credentials on login page")]
         public void WhenUserInputCredentialsOnLoginPage()
         {
             Go.To<LoginPage>().LoginTextInput.Set(GetRandomUserLogin())
