@@ -1,5 +1,6 @@
 name: Tests Run
 on: 
+  workflow_dispatch:
   repository_dispatch:
     types: [be_deployed, fe_deployed]
 jobs:
