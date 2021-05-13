@@ -21,9 +21,9 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --logger:"nunit;LogFilePath=Reports/test-result.xml" --no-build --configuration Release --no-restore --verbosity normal
+      run: dotnet test --logger:"nunit;LogFilePath=Reports/test-result.xml" --no-build --no-restore --verbosity normal
     - name: Get Xray Cloud API token
       env:
         CLIENT_ID: ${{ secrets.CLIENT_ID }}
