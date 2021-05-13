@@ -17,7 +17,6 @@ using IFlow.Testing.Utils.Api.ContractType;
 using IFlow.Testing.Utils.Api.Investments;
 using IFlow.Testing.Utils.Api.Projects;
 using IFlow.Testing.Utils.Api.ProjectStage;
-using FluentAssertions;
 
 
 namespace IFlow.Testing.StepDefinitions
