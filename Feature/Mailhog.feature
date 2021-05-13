@@ -1,5 +1,6 @@
 ﻿Feature: Mailhog
 
-Scenario: Mailhog test
-	When Registration by api 
-	When Get email
+@TEST_IB-215
+Scenario: MailhogTest
+		When Registration by api 
+		When Get email
