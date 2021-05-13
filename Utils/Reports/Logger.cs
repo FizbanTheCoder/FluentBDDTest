@@ -10,7 +10,7 @@ namespace IFlow.Testing.Utils.Reports
     public sealed class Logger
     {
         private static readonly Lazy<Logger> LazyInstance = new Lazy<Logger>(() => new Logger());
-        private static readonly ThreadLocal<ILogger> Log = new ThreadLocal<ILogger>(() => LogManager.GetLogger(AppDomain.GetCurrentThreadId().ToString()));
+        private static readonly ThreadLocal<ILogger> Log = new ThreadLocal<ILogger>(() => LogManager.GetLogger(Thread.CurrentThread.ManagedThreadId.ToString()));
 
         private Logger()
         {
