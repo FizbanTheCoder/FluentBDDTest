@@ -24,6 +24,7 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --logger:"nunit;LogFilePath=Reports/test-result.xml" --no-build --no-restore
+      continue-on-error: true
     - name: Get Xray Cloud API token
       env:
         CLIENT_ID: ${{ secrets.CLIENT_ID }}
