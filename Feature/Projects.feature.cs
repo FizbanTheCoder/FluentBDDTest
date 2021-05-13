@@ -75,14 +75,14 @@ namespace IFlow.Testing.Feature
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("User want log in with active account")]
+        [NUnit.Framework.DescriptionAttribute("User wants to create a new project")]
         [NUnit.Framework.CategoryAttribute("TEST_IB-202")]
-        public virtual void UserWantLogInWithActiveAccount()
+        public virtual void UserWantsToCreateANewProject()
         {
             string[] tagsOfScenario = new string[] {
                     "TEST_IB-202"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User want log in with active account", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User wants to create a new project", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 7
  this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -104,11 +104,17 @@ namespace IFlow.Testing.Feature
             {
                 this.ScenarioStart();
 #line 8
-  testRunner.And("Create and login user by Api", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.Given("Create and login user by Api", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 9
   testRunner.And("user have contract type, project stage, organization, investment and business uni" +
                         "t created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 10
+  testRunner.When("User creates a new project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 11
+  testRunner.Then("new project is created in database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

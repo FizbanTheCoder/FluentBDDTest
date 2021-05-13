@@ -4,7 +4,7 @@
 	I need to create organization, investment and business unit before I can create a project
 	
 	@TEST_IB-202
-	Scenario: User want log in with active account
+	Scenario: User wants to create a new project
 		Given Create and login user by Api
 		And user have contract type, project stage, organization, investment and business unit created
 		When User creates a new project

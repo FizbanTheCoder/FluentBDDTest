@@ -5,7 +5,7 @@
 
 #User want log in witch active account
 @TEST_IB-129
-Scenario: User want log in witch active account
+Scenario: User wants to log in witch active account
 	Given Registration by api
 	When Accept registration by email
 	And User input credentials on login page

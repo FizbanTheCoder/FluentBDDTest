@@ -75,14 +75,14 @@ namespace IFlow.Testing.Feature
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("User want log in witch active account")]
+        [NUnit.Framework.DescriptionAttribute("User wants to log in witch active account")]
         [NUnit.Framework.CategoryAttribute("TEST_IB-129")]
-        public virtual void UserWantLogInWitchActiveAccount()
+        public virtual void UserWantsToLogInWitchActiveAccount()
         {
             string[] tagsOfScenario = new string[] {
                     "TEST_IB-129"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User want log in witch active account", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User wants to log in witch active account", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 8
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -149,7 +149,6 @@ this.ScenarioInitialize(scenarioInfo);
 #line 15
  testRunner.When("Registration by api", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 18
 #line 16
  testRunner.And("Accept registration by email", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

@@ -170,5 +170,24 @@ namespace IFlow.Testing.StepDefinitions
             var bodyValue = await GetEmails.GetBodyValueForCurrentEmail(GetRandomUserEmail());
             bodyValue.Should().ContainAll("To finish","please click","the below", "buton to verify","your account");
         }
+
+        [When(@"User creates a new organization")]
+        public async Task WhenUserCreatesANewOrganization()
+        {
+            var userToken = ScenarioContext.Get<string>(ScenarioContextDataKeys.UserToken);
+            var userId = ScenarioContext.Get<string>(ScenarioContextDataKeys.UserId);
+            var organizationId = await Organizations.CreateOrganizationForUser(userToken, SetRandomCompanyName(), SetRandomCompanyEmail(), SetCompanyPhoneNumber(), userId,
+            SetCompanyStreet(), SetCompanyCountry(), SetCompanyCity(), SetCompanyPostalCode(), SetCompanyProvince());
+            ScenarioContext.Add(ScenarioContextDataKeys.OrganizationId, organizationId);
+        }
+
+        [Then(@"new organization is created in database")]
+        public void ThenNewOrganizationIsCreatedInDatabase()
+        {
+            var organizationId = ScenarioContext.Get<string>(ScenarioContextDataKeys.OrganizationId);
+            User.OrganizationIsExisting(organizationId).Should().NotBeNull();
+        }
+
+
     }
 }

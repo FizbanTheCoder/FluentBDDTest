@@ -31,9 +31,19 @@ namespace IFlow.Testing.Utils.DataBase
             connection.Open();
             return connection.Query<string>(sql).FirstOrDefault();
         }
+
         public static string ProjectIsExisting(string projectId)
         {
             var sql = $"SELECT [Name] FROM [dbo].[Projects] WHERE [Id] = '{projectId}'";
+            using var connection = new SqlConnection(DataBaseConnectionString);
+            connection.Open();
+            var message = connection.Query<string>(sql).FirstOrDefault();
+            return message;
+        }
+
+        public static string OrganizationIsExisting(string organizationId)
+        {
+            var sql = $"SELECT [Name] FROM [dbo].[Organizations] WHERE [Id] = '{organizationId}'";
             using var connection = new SqlConnection(DataBaseConnectionString);
             connection.Open();
             var message = connection.Query<string>(sql).FirstOrDefault();
