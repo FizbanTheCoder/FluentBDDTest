@@ -4,8 +4,8 @@
 	I want to create account
 
 @IB-142
-@backEnd
-@frontEnd
+@AUTO
+@FrontEnd
 Scenario: Correct registration process
 	When User input all data on registration page
 	And Confirm by click
@@ -13,6 +13,8 @@ Scenario: Correct registration process
 	And After confirmation email message user can log in
 
 @IB-192
+@AUTO
+@FrontEnd
 Scenario: Failed registration process
 	When User don't input all data on registration page and confirm
 	Then account is not created in database

@@ -76,11 +76,11 @@ namespace IFlow.Testing.Feature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("User wants to log in witch active account")]
-        [NUnit.Framework.CategoryAttribute("TEST_IB-129")]
+        [NUnit.Framework.CategoryAttribute("IB-129")]
         public virtual void UserWantsToLogInWitchActiveAccount()
         {
             string[] tagsOfScenario = new string[] {
-                    "TEST_IB-129"};
+                    "IB-129"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User wants to log in witch active account", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 8
@@ -167,11 +167,11 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Login with incorrect data")]
-        [NUnit.Framework.CategoryAttribute("TEST_IB-201")]
+        [NUnit.Framework.CategoryAttribute("IB-201")]
         public virtual void LoginWithIncorrectData()
         {
             string[] tagsOfScenario = new string[] {
-                    "TEST_IB-201"};
+                    "IB-201"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login with incorrect data", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 22

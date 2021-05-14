@@ -5,6 +5,7 @@
 
 #User want log in witch active account
 @IB-129
+@AUTO
 Scenario: User wants to log in witch active account
 	Given Registration by api
 	When Accept registration by email
@@ -19,6 +20,7 @@ Scenario: User login by API
 	Then User is logged to account
 
 @IB-201
+@AUTO
 Scenario: Login with incorrect data
 	When user input incorrect data on login page
 	Then user is not logged

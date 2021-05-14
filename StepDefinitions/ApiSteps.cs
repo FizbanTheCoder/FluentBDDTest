@@ -87,6 +87,7 @@ namespace IFlow.Testing.StepDefinitions
             var projectStageId = await ContractType.GetContractTypeId(userToken, organizationId);
             ScenarioContext.Set(ScenarioContextDataKeys.ProjectStageId, projectStageId);
         }
+
         [Given(@"Create and login user by Api")]
         public async Task GivenCreateAndLoginUserByApi()
         {
