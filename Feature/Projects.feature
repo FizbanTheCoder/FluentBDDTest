@@ -3,14 +3,14 @@
 	As a new user
 	I need to create organization, investment and business unit before I can create a project
 
-@TEST_IB-202
+@IB-202
 Scenario: User wants to create a new project
 	Given Create and login user by Api
 	And user have contract type, project stage, organization, investment and business unit created
 	When User creates a new project
 	Then new project is created in database
 
-@TEST_IB-205
+@IB-205
 Scenario: Create new project
 	Given Create and login user by Api
 	And user have contract type, project stage, organization, investment and business unit created
