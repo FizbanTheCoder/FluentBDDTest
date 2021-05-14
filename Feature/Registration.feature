@@ -3,7 +3,7 @@
 	As a new user
 	I want to create account
 
-@TEST_IB-142
+@IB-142
 @backEnd
 @frontEnd
 Scenario: Correct registration process
@@ -12,7 +12,7 @@ Scenario: Correct registration process
 	Then User see confirmation message
 	And After confirmation email message user can log in
 
-@TEST_IB-192
+@IB-192
 Scenario: Failed registration process
 	When User don't input all data on registration page and confirm
 	Then account is not created in database
