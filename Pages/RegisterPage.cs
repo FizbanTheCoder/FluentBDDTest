@@ -1,49 +1,50 @@
-﻿using Atata;
+﻿using System;
+using System.Collections.Generic;
+using System.Runtime.InteropServices.ComTypes;
+using System.Text;
+using Atata;
+using RazorEngine.Compilation.ImpromptuInterface;
 
 namespace IFlow.Testing.Pages
 {
     using _= RegisterPage;
-    [Url("http://app-iflow-dev-001.azurewebsites.net/register")]
-    [VerifyTitle("React app")]
     public class RegisterPage : BasePage<_>
     {
-        [FindByXPath("//label/span[text()='Login *']//..//..//../input [@type='text']")]
-        public TextInput<_> LoginTextInput{ get; set; }
+        [FindById("User_Name")] public TextInput<_> UserNameInput { get; set; }
 
-        [FindByXPath("//label/span[text()='Name *']//..//..//../input [@type='text']")]
-        public TextInput<_> NameTextInput { get; set; }
+        [FindById("User_LastName")] public TextInput<_> UserLastNameInput { get; set; }
 
-        [FindByXPath("//label/span[text()='E-mail address *']//..//..//../input [@type='text']")]
-        public TextInput<_> EMailAddressTextInput { get; set; }
+        [FindById("User_Street")] public TextInput<_> UserStreetInput { get; set; }
 
-        [FindByXPath("//label/span[text()='Surname *']//..//..//../input [@type='text']")]
-        public TextInput<_> SurnameTextInput { get; set; }
+        [FindById("User_City")] public TextInput<_> UserCityInput { get; set; }
 
-        [FindByXPath("//span[text()='Password *']//..//..//../input [@type='password']")]
-        public PasswordInput<_> PasswordTextInput { get; set; }
+        [FindById("User_State")] public TextInput<_> UserStateInput { get; set; }
 
-        [FindByXPath("//label/span[text()='Phone number *']//..//..//../input [@type='text']")]
-        public TextInput<_> PhoneNumberTextInput { get; set; }
+        [FindById("User_Country")] public TextInput<_> UserCountryInput { get; set; }
 
-        [FindByXPath("//span[text()='Repeat password *']//..//..//../input[@type='password']")]
-        public PasswordInput<_> RepeatPasswordTextInput { get; set; }
+        [FindById("User_ZipCode")] public TextInput<_> UserZipCodeInput { get; set; }
 
-        [FindByXPath("//label/span[text()='Country *']//..//..//../select")]
-        public Select<_> CountrySelect { get; set; }
+        [FindById("User_PhoneNumber")] public TextInput<_> UserPhoneNumberInput { get; set; }
 
-        [FindByXPath("//body/div[@id='root']/div[2]/div[1]/div[1]/div[2]/form[1]/div[6]/button[1]")]
-        public Button<_> RegisterButton { get; set; }
+        [FindById("User_CardNumber")] public TextInput<_> UserCardNumberInput { get; set; }
 
-        [FindByXPath(
-            "//body/div[@id='root']/div[2]/div[1]/div[1]/div[2]/form[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]")]
-        public Clickable<_> FirstCheckBox { get; set; }
+        [FindById("User_CardHolderName")] public TextInput<_> UserCardHolderNameInput { get; set; }
 
-        [FindByXPath(
-            "//body/div[@id='root']/div[2]/div[1]/div[1]/div[2]/form[1]/div[5]/div[2]/div[1]/div[1]/div[1]/div[1]")]
-        public Clickable<_> SecondCheckBox { get; set; }
+        [FindById("User_Expiration")] public TextInput<_> UserExpirationInput { get; set; }
 
-        [FindByXPath("//span[contains(text(),'Your account has been registered successfully.')]")]
-        public Text<_> ConfirmationMessage { get; set; }
+        [FindById("User_SecurityNumber")] public TextInput<_> UserSecurityNumberInput { get; set; }
+
+        [FindById("Email")] public TextInput<_> EmailInput { get; set; }
+
+        [FindById("Password")] public TextInput<_> PasswordInput { get; set; }
+
+        [FindById("ConfirmPassword")] public TextInput<_> ConfirmPasswordInput { get; set; }
+
+        [FindByXPath("//button[contains(text(),'Register')]")]
+        public Button<LoginPage, _> RegisterButton { get; set; }
+
+
+
+
     }
-
 }

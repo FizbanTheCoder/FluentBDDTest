@@ -1,28 +1,22 @@
-﻿using Atata;
+﻿using System;
+using System.Collections.Generic;
+using System.Runtime.InteropServices.ComTypes;
+using System.Text;
+using Atata;
+using RazorEngine.Compilation.ImpromptuInterface;
 
 namespace IFlow.Testing.Pages
 {
-    using _ = LoginPage;
-    [Url("http://app-iflow-dev-001.azurewebsites.net/login")]
-    [VerifyTitle("React app")]
+    using _=LoginPage;
     public class LoginPage : BasePage<_>
     {
-        [FindByXPath("//a[@href='/register']/button[@type='submit']")]
-        public Button<RegisterPage, _> CreateAccountButton { get; set; }
+        [FindById("Email")] 
+        public TextInput<_> LoginInput { get; set; }
 
-        [FindByXPath("//span[text()='Login *']/..//../..//input[@type='text']")]
-        public TextInput<_> LoginTextInput { get; set; }
+        [FindById("Password")] 
+        public TextInput<_> PasswordInput { get; set; }
 
-        [FindByXPath("//input[@type='password']")]
-        public PasswordInput<_> PassTextInput { get; set; }
-
-        [FindByXPath("//button[@type='submit']")]
-        public Button<HomePage, _> LoginButton { get; set; }
-
-        [FindByXPath("//input[@type='text']/preceding-sibling::div/label/span")]
-        public Text<_> LoginInputLabel { get; set; }
-
-        [FindByXPath("//input[@type='password']/preceding-sibling::div/label/span")]
-        public Text<_> PasswordInputLabel { get; set; }
+        [FindByXPath("//a[contains(text(),'Register as a new user?')]")]
+        public Link<RegisterPage,_> RagisterLink { get; set; }
     }
 }
