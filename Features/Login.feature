@@ -1,11 +1,9 @@
 ﻿Feature: Login
-	In order to avoid silly mistakes
-	As a math idiot
-	I want to be told the sum of two numbers
+	To get accet to my accont
+	As a register user
+	I want to be able to get my account
 
-@mytag
-Scenario: Add two numbers
-	Given the first number is 50
-	And the second number is 70
-	When the two numbers are added
-	Then the result should be 120
+Scenario: Login to shop
+	Given Register user want log in
+	When Input autorization data and confirm
+	Then User is logged

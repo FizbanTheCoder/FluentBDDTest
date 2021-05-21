@@ -1,11 +1,9 @@
 ﻿Feature: BuyItem
-	In order to avoid silly mistakes
-	As a math idiot
-	I want to be told the sum of two numbers
+	To get new .net t-shirt
+	As a register user
+	I want to order new one
 
-@mytag
-Scenario: Add two numbers
-	Given the first number is 50
-	And the second number is 70
-	When the two numbers are added
-	Then the result should be 120
+Scenario: Buy Item
+	Given Logged user who want buy item
+	When I buy some item 
+	Then Item is buyed and result is in history
