@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <SpecFlowObsoleteCodeBehindFiles Remove="Feature\LoginTests - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\LoginTests - Copy.feature.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -47,6 +47,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Features\" />
     <Folder Include="Report\" />
   </ItemGroup>
   
