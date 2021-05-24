@@ -51,7 +51,6 @@
     <Folder Include="Report\" />
     <Folder Include="Utils\Api\" />
     <Folder Include="Utils\DataBase\" />
-    <Folder Include="Utils\DataFactory\" />
   </ItemGroup>
   
 </Project>
