@@ -3,11 +3,11 @@
 namespace IFlow.Testing.Pages
 {
     using _=HomePage;
-    [Url("http://host.docker.internal:5105/Account/Login")]
-    [VerifyTitle("Catalog - Microsoft.eShopOnContainers.WebMVC")]
+    [Url("http://app-iflow-dev-001.azurewebsites.net/")]
+    [VerifyTitle("React app")]
     public class HomePage : BasePage<_>
     {
-        [FindByClass("esh-identity-name esh-identity-name--upper")]
-        public Link<LoginPage, _> LoginLink { get; set; }
+        [FindByXPath("//div[contains(text(),'Homepage')]")]
+        public Text<_> HomePageText { get; set; }
     }
 }
