@@ -1,7 +1,6 @@
 ﻿using Atata;
-using Bogus.DataSets;
-using IFlow.Testing.Utils.DataBase;
 using IFlow.Testing.Utils.DataFactory;
+using System;
 using TechTalk.SpecFlow;
 
 namespace IFlow.Testing.StepDefinitions
@@ -16,9 +15,10 @@ namespace IFlow.Testing.StepDefinitions
                    ?? Go.To<TPageObject>(navigate: false);
         }
 
+        [Obsolete("Visual Studio IntelliSense Work Around", true)]
         protected string SetRandomUserLogin()
         {
-            var userLogin = UserData.RegistrationUserName;
+            var userLogin = UserData.CreateUserData().Generate().UserName;
             ScenarioContext.Add(ScenarioContextDataKeys.UserName, userLogin);
             return userLogin;
         }
@@ -28,9 +28,10 @@ namespace IFlow.Testing.StepDefinitions
             return ScenarioContext.Get<string>(ScenarioContextDataKeys.UserName);
         }
 
+        [Obsolete("Visual Studio IntelliSense Work Around", true)]
         protected string SetRandomUserPassword()
         {
-            var password = new Internet().Password(12, 20);
+            var password = UserData.CreateUserData().Generate().Password;
             ScenarioContext.Add(ScenarioContextDataKeys.Password, password);
             return password;
         }
@@ -40,9 +41,10 @@ namespace IFlow.Testing.StepDefinitions
             return ScenarioContext.Get<string>(ScenarioContextDataKeys.Password);
         }
 
+        [Obsolete("Visual Studio IntelliSense Work Around", true)]
         protected string SetRandomUserFirstName()
         {
-            var userFirstName = UserData.FirsName;
+            var userFirstName = UserData.CreateUserData().Generate().FirstName;
             ScenarioContext.Add(ScenarioContextDataKeys.FirstName, userFirstName);
             return userFirstName;
         }
@@ -52,9 +54,10 @@ namespace IFlow.Testing.StepDefinitions
             return ScenarioContext.Get<string>(ScenarioContextDataKeys.FirstName);
         }
 
+        [Obsolete("Visual Studio IntelliSense Work Around", true)]
         protected string SetRandomUserEmail()
         {
-            var randomUserEmail = UserData.Email;
+            var randomUserEmail = UserData.CreateUserData().Generate().Email;
             ScenarioContext.Add(ScenarioContextDataKeys.Email, randomUserEmail);
             return randomUserEmail;
         }
@@ -64,9 +67,10 @@ namespace IFlow.Testing.StepDefinitions
             return ScenarioContext.Get<string>(ScenarioContextDataKeys.Email);
         }
 
+        [Obsolete("Visual Studio IntelliSense Work Around", true)]
         protected string SetRandomUserLastName()
         {
-            var userLastName = UserData.LastName;
+            var userLastName = UserData.CreateUserData().Generate().LastName;
             ScenarioContext.Add(ScenarioContextDataKeys.LastName, userLastName);
             return userLastName;
         }
@@ -76,9 +80,10 @@ namespace IFlow.Testing.StepDefinitions
             return ScenarioContext.Get<string>(ScenarioContextDataKeys.LastName);
         }
 
+        [Obsolete("Visual Studio IntelliSense Work Around", true)]
         protected string SetRandomUserPhoneNumber()
         {
-            var userPhoneNumber = UserData.PhoneNumber;
+            var userPhoneNumber = UserData.CreateUserData().Generate().PhoneNumber;
             ScenarioContext.Add(ScenarioContextDataKeys.PhoneNumber, userPhoneNumber);
             return userPhoneNumber;
         }
@@ -88,9 +93,10 @@ namespace IFlow.Testing.StepDefinitions
             return ScenarioContext.Get<string>(ScenarioContextDataKeys.PhoneNumber);
         }
 
+        [Obsolete("Visual Studio IntelliSense Work Around", true)]
         protected string SetRandomUserCountry()
         {
-            var userCountry = UserData.Country;
+            var userCountry = UserData.CreateUserData().Generate().Country;
             ScenarioContext.Add(ScenarioContextDataKeys.Country, userCountry);
             return userCountry;
         }

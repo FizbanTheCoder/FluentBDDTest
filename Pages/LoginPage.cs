@@ -4,7 +4,7 @@ namespace IFlow.Testing.Pages
 {
     using _ = LoginPage;
     [Url("http://app-iflow-dev-001.azurewebsites.net/login")]
-    [VerifyTitle("React app")]
+    [VerifyTitle("IFLOW")]
     public class LoginPage : BasePage<_>
     {
         [FindByXPath("//a[@href='/register']/button[@type='submit']")]
