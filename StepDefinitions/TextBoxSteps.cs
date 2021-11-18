@@ -1,5 +1,7 @@
 ﻿using Atata;
 using IFlow.Testing.Pages;
+using IFlow.Testing.Utils.DataBase;
+using IFlow.Testing.Utils.DataFactory;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,7 +18,8 @@ namespace IFlow.Testing.StepDefinitions
         private string userCountry;
 
         [Before]
-        public void Before()
+        [Obsolete("Visual Studio IntelliSense Work Around", true)]
+        public void GenerateUserData()
         {
             userName = SetRandomUserFirstName();
             userLastName = SetRandomUserLastName();
