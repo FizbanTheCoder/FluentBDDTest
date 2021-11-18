@@ -4,7 +4,7 @@ namespace IFlow.Testing.Pages
 {
     using _ = CreateNewProjectPage;
     [Url("http://app-iflow-dev-001.azurewebsites.net/project/add")]
-    [VerifyTitle("React app")]
+    [VerifyTitle("IFLOW")]
     public class CreateNewProjectPage : BasePage<_>
     {
         [FindByAttribute("data-test-id", "add-new-project-button")]

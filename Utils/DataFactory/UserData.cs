@@ -1,35 +1,23 @@
 ﻿using System;
-using System.Linq;
 using Bogus;
-using Bogus.DataSets;
+using IFlow.Testing.Utils.DataBase;
 
 namespace IFlow.Testing.Utils.DataFactory
 {
     public static class UserData
     {
-        public static string RegistrationUserName => new Bogus.Person().UserName;
-        public static string FirsName => new Bogus.Person().FirstName;
-        public static string LastName => new Bogus.Person().LastName;
-        public static string Email => new Bogus.Faker().Internet.ExampleEmail();
-        public static string Country => new Bogus.Faker().Address.Country();
-        public static string PhoneNumber => new Faker().Phone.PhoneNumber("#########");
-
-        public static string Password(this Internet internet, int minLength, int maxLength)
+        [Obsolete("Visual Studio IntelliSense Work Around", true)]
+        public static Faker<User> CreateUserData()
         {
-            var r = internet.Random;
-
-            var lowercase = r.Char('a', 'z').ToString();
-            var uppercase = r.Char('A', 'Z').ToString();
-            var number = r.Char('0', '9').ToString();
-            var symbol = r.Char('!', '/').ToString();
-            var padding = r.String2(minLength - 4);
-            var padding2 = r.String2(r.Number(0, maxLength - minLength));  // random extra padding between min and max
-
-            var chars = (lowercase + uppercase + number + symbol + padding + padding2).ToArray();
-            var shuffledChars = r.Shuffle(chars).ToArray();
-
-            return new string(shuffledChars);
+           return  new Faker<User>()
+                              .CustomInstantiator(f => new User())
+                              .RuleFor(u => u.FirstName, f => f.Name.FirstName())
+                              .RuleFor(u => u.LastName, f => f.Name.LastName())
+                              .RuleFor(u => u.UserName, (f, u) => f.Internet.UserName(u.FirstName, u.LastName))
+                              .RuleFor(u => u.Email, (f, u) => f.Internet.Email(u.FirstName, u.LastName))
+                              .RuleFor(u => u.Country, f => f.Address.Country())
+                              .RuleFor(u => u.PhoneNumber, f => f.Phone.PhoneNumber())
+                              .RuleFor(u => u.Password, f => f.Internet.Password(8, false, "", ""));
         }
-
     }
 }

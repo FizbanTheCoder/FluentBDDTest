@@ -9,6 +9,7 @@ using NUnit.Framework;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist.ValueRetrievers;
 using FluentAssertions;
+using System;
 
 namespace IFlow.Testing.StepDefinitions
 {
@@ -27,6 +28,7 @@ namespace IFlow.Testing.StepDefinitions
 
 
         [Given(@"User put complete data but don't mark checkboxes on registration")]
+        [Obsolete("Visual Studio IntelliSense Work Around", true)]
         public void GivenUserPutCompleteDataButDonTMarkCheckboxesOnRegistration()
         {
             var password = SetRandomUserPassword();
@@ -69,6 +71,7 @@ namespace IFlow.Testing.StepDefinitions
         }
 
         [When(@"User input all data on registration page")]
+        [Obsolete("Visual Studio IntelliSense Work Around", true)]
         public void WhenUserInputAllDataOnRegistrationPage()
         {
             var password = SetRandomUserPassword();
@@ -130,6 +133,7 @@ namespace IFlow.Testing.StepDefinitions
         }
 
         [When(@"User don't input all data on registration page and confirm")]
+        [Obsolete("Visual Studio IntelliSense Work Around", true)]
         public void WhenUserDontInputAllDataOnRegistrationPageAndConfirm()
         {
             var password = SetRandomUserPassword();

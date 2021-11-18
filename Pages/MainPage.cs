@@ -4,7 +4,7 @@ namespace IFlow.Testing.Pages
 {
     using _ = MainPage;
     [Url("http://app-iflow-dev-001.azurewebsites.net/")]
-    [VerifyTitle("React app")]
+    [VerifyTitle("IFLOW")]
     public class MainPage : BasePage<_>
     {
         [FindByXPath("//span[contains(text(),'Login to system')]")]

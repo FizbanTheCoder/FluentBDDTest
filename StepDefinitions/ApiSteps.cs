@@ -17,7 +17,7 @@ using IFlow.Testing.Utils.Api.ContractType;
 using IFlow.Testing.Utils.Api.Investments;
 using IFlow.Testing.Utils.Api.Projects;
 using IFlow.Testing.Utils.Api.ProjectStage;
-
+using System;
 
 namespace IFlow.Testing.StepDefinitions
 {
@@ -25,6 +25,7 @@ namespace IFlow.Testing.StepDefinitions
     class ApiSteps : BaseSteps
     {
         [When(@"User send correct data to log in")]
+        [Obsolete("Visual Studio IntelliSense Work Around", true)]
         public async Task WhenUserSendCorrectDataToLogIn()
         {
             await Accounts.AccountsCreateAccount(SetRandomUserLogin(), SetRandomUserFirstName(), SetRandomUserLastName(), SetRandomUserEmail(), SetRandomUserPassword(), SetRandomUserCountry(), SetRandomUserPhoneNumber());
@@ -39,6 +40,7 @@ namespace IFlow.Testing.StepDefinitions
 
         [When(@"Registration by api"),
         Given(@"Registration by api")]
+        [Obsolete("Visual Studio IntelliSense Work Around", true)]
         public async Task WhenRegistrationByApi()
         {
             await Accounts.AccountsCreateAccount(SetRandomUserLogin(), SetRandomUserFirstName(), SetRandomUserLastName(), SetRandomUserEmail(), SetRandomUserPassword(), SetRandomUserCountry(), SetRandomUserPhoneNumber());
@@ -89,6 +91,7 @@ namespace IFlow.Testing.StepDefinitions
         }
 
         [Given(@"Create and login user by Api")]
+        [Obsolete("Visual Studio IntelliSense Work Around", true)]
         public async Task GivenCreateAndLoginUserByApi()
         {
             await Accounts.AccountsCreateAccount(SetRandomUserLogin(), SetRandomUserFirstName(), SetRandomUserLastName(), SetRandomUserEmail(), SetRandomUserPassword(), SetRandomUserCountry(), SetRandomUserPhoneNumber());

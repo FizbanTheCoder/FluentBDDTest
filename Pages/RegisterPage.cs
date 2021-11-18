@@ -4,7 +4,7 @@ namespace IFlow.Testing.Pages
 {
     using _= RegisterPage;
     [Url("http://app-iflow-dev-001.azurewebsites.net/register")]
-    [VerifyTitle("React app")]
+    [VerifyTitle("IFLOW")]
     public class RegisterPage : BasePage<_>
     {
         [FindByXPath("//label/span[text()='Login *']//..//..//../input [@type='text']")]
