@@ -1,4 +1,5 @@
-﻿Feature: Registration
+﻿#TODO: Delete
+Feature: Registration
 	To start using apligation
 	As a new user
 	I want to create account

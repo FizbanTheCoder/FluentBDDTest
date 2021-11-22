@@ -1,7 +1,4 @@
 ﻿using Atata;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace IFlow.Testing.Pages
 {
@@ -15,8 +12,6 @@ namespace IFlow.Testing.Pages
 
         [FindById("userEmail")]
         public EmailInput<_> UserEmailTextBoxInput { get; set; }
-
-
 
         [FindById("currentAddress")]
         public TextArea<_> CurrentAddressTextBoxTextArea { get; set; }
@@ -37,9 +32,7 @@ namespace IFlow.Testing.Pages
         public Text<_> TextBoxOutputEmail { get; set; }
 
         [FindById("currentAddress")]
-       // [ValueGetFromValue]
         public Text<_> TextBoxOutputCurrentAddress { get; set; }
-
 
         [FindByXPath("output")]
         public Text<_> OutputBox { get; set; }

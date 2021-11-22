@@ -1,4 +1,5 @@
-﻿Feature: Mailhog
+﻿#TODO: Delete
+Feature: Mailhog
 
 @IB-215
 @AUTO

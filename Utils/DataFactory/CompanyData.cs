@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Razor.Language.CodeGeneration;
 
 namespace IFlow.Testing.Utils.DataFactory
 {
+    //TODO: Delete
+
     public static class CompanyData
     {
         public static string Name => new Bogus.Faker().Company.CompanyName();

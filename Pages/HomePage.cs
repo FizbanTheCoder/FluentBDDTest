@@ -2,7 +2,9 @@
 
 namespace IFlow.Testing.Pages
 {
-    using _=HomePage;
+    //TODO: Delete
+
+    using _ =HomePage;
     [Url("http://app-iflow-dev-001.azurewebsites.net/")]
     [VerifyTitle("IFLOW")]
     public class HomePage : BasePage<_>

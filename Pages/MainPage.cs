@@ -1,7 +1,9 @@
 ﻿using Atata;
 
 namespace IFlow.Testing.Pages
-{
+{    
+    //TODO: Delete
+
     using _ = MainPage;
     [Url("http://app-iflow-dev-001.azurewebsites.net/")]
     [VerifyTitle("IFLOW")]

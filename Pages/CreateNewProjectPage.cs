@@ -2,6 +2,8 @@
 
 namespace IFlow.Testing.Pages
 {
+    //TODO: Delete
+
     using _ = CreateNewProjectPage;
     [Url("http://app-iflow-dev-001.azurewebsites.net/project/add")]
     [VerifyTitle("IFLOW")]

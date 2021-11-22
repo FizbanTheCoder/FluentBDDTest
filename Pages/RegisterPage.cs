@@ -2,7 +2,9 @@
 
 namespace IFlow.Testing.Pages
 {
-    using _= RegisterPage;
+    //TODO: Delete
+
+    using _ = RegisterPage;
     [Url("http://app-iflow-dev-001.azurewebsites.net/register")]
     [VerifyTitle("IFLOW")]
     public class RegisterPage : BasePage<_>
