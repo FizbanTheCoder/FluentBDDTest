@@ -6,6 +6,8 @@ namespace IFlow.Testing.Utils.DataFactory
 {
     public static class UserData
     {
+        public static readonly User CorrectApiUser = new User("68cb8daf20msh72afcd9c94f4186p1a4129jsn069149a72101", "x-rapidapi-key");
+
         [Obsolete("Visual Studio IntelliSense Work Around", true)]
         public static Faker<User> CreateUserData()
         {

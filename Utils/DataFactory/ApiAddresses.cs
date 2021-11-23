@@ -10,7 +10,11 @@ namespace IFlow.Testing.Utils.DataFactory
 
     public static class ApiAddresses
     {
-        private static string BaseApiUrl => "https://app-iflow-api-dev-001.azurewebsites.net/api/";
+        private static string BaseApiUrl => "https://community-open-weather-map.p.rapidapi.com/";
+        public static string CurrentWeatherDataApiUrl => BaseApiUrl + "weather";
+        public static string MonthWeatherDataApiUrl => BaseApiUrl + "climate/month";
+
+
         public static string AccountsRegistrationApiUrl => BaseApiUrl + "Accounts";
         public static string AuthLoginToAccountApiUrl => BaseApiUrl + "Auth";
         public static string OrganizationsApiUrl => BaseApiUrl + "Organizations";
