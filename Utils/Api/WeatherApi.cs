@@ -13,7 +13,6 @@ namespace IFlow.Testing.Utils.Api
                 .SetQueryParam("q", city)
                 .SetQueryParam("units", units)
                 .GetJsonAsync());
-               
         }
 
         public static async Task<dynamic> GetMonthWeatherData(string city, string units = "metric")
@@ -23,7 +22,6 @@ namespace IFlow.Testing.Utils.Api
                 .SetQueryParam("q", city)
                 .SetQueryParam("units", units)
                 .GetJsonAsync());
-
         }
     }
 }
