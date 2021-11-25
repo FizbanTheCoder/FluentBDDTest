@@ -14,8 +14,15 @@ namespace IFlow.Testing.Utils.DataBase
         public string Country { get; set; }
         public string PhoneNumber { get; set; }
         public string Password { get; set; }
+        public string Key { get; set; }
+        public string Header { get; set; }
 
-   
+        public User(string key = "", string header = "")
+        {
+            Key = key;
+            Header = header;
+        }
+
         public static void UpdateEmailConformationForAccepted(string userId)
         {
             var sql = "Input your SQL query";
