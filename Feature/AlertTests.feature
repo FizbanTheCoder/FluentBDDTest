@@ -4,9 +4,10 @@
 
 @AUTO
 Scenario: Closing an alert after clicking submit button
-	When User click submit button alert appears
-	#Then Alert message is displayed, user confirms it with button
-
+	When User click submit button and alert appears
+	Then Alert message is displayed 
+	And user confirms it with button
 	@AUTO
 Scenario: Accepting an alert after clicking submit button
 	When User click submit button and confirms alert that appears
+	Then Correct message appears on page

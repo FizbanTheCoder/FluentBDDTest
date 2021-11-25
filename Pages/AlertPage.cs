@@ -1,7 +1,4 @@
 ﻿using Atata;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace IFlow.Testing.Pages
 {
@@ -11,16 +8,26 @@ namespace IFlow.Testing.Pages
     public class AlertPage : BasePage<_>
     {
         [FindById("alertButton")]
-        [CloseAlertBox]
         public Button<_> AlertButton { get; set; }
 
-        [FindById("confirmButton")]
-        [CloseConfirmBox]
-        public Button<_> ConfirmButton { get; set; }
+        [FindById("confirmResult")]
+        public Text<_> ResultText { get; set; }
 
         [FindById("confirmButton")]
-        [CloseConfirmBox]
         public Button<_> Cancel { get; set; }
 
+        public void DissmisAlert()
+        {
+            AtataContext.Current.Driver.SwitchTo().Alert().Dismiss();
+        }
+
+        public void AcceptAlert()
+        {
+            AtataContext.Current.Driver.SwitchTo().Alert().Accept();
+        }
+        public string GetAlertMessage()
+        {
+            return AtataContext.Current.Driver.SwitchTo().Alert().Text;
+        }
     }
 }
