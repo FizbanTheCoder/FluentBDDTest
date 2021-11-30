@@ -3,7 +3,7 @@
 namespace IFlow.Testing.Pages
 {
     using _ = TextBoxPage;
-    [Url("https://demoqa.com/text-box")]
+    [Url("/text-box")]
     [VerifyTitle("ToolsQA")]
     public class TextBoxPage : BasePage<_>
     {

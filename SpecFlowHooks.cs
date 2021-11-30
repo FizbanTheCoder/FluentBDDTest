@@ -24,7 +24,8 @@ namespace IFlow.Testing
                 .WithArguments("start-maximized")
                 .UseCulture("en-US")
                 .UseAllNUnitFeatures()
-                .ApplyJsonConfig<AtataConfig>();
+                .ApplyJsonConfig<AtataConfig>()
+                .UseBaseUrl("https://demoqa.com");
 
             AtataContext.GlobalConfiguration.AutoSetUpDriverToUse();
 

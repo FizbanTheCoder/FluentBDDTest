@@ -3,7 +3,7 @@
 namespace IFlow.Testing.Pages
 {
     using _ = AlertPage;
-    [Url("https://demoqa.com/alerts")]
+    [Url("/alerts")]
     [VerifyTitle("ToolsQA")]
     public class AlertPage : BasePage<_>
     {
@@ -15,19 +15,5 @@ namespace IFlow.Testing.Pages
 
         [FindById("confirmButton")]
         public Button<_> Cancel { get; set; }
-
-        public void DissmisAlert()
-        {
-            AtataContext.Current.Driver.SwitchTo().Alert().Dismiss();
-        }
-
-        public void AcceptAlert()
-        {
-            AtataContext.Current.Driver.SwitchTo().Alert().Accept();
-        }
-        public string GetAlertMessage()
-        {
-            return AtataContext.Current.Driver.SwitchTo().Alert().Text;
-        }
     }
 }
