@@ -3,7 +3,7 @@
 namespace IFlow.Testing.Pages
 {
     using _ = ResizePage;
-    [Url("https://demoqa.com/resizable")]
+    [Url("/resizable")]
     [VerifyTitle("ToolsQA")]
     public class ResizePage : BasePage<_>
     {
@@ -12,10 +12,5 @@ namespace IFlow.Testing.Pages
 
         [FindById("resizableBoxWithRestriction")]
         public Text<_> CommentBox { get; set; }
-
-        public int GetBoxSize()
-        {
-            return CommentBox.ComponentSize.Width.Value;
-        }
     }
 }

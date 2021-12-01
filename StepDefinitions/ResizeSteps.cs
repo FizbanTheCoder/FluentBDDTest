@@ -1,4 +1,5 @@
 ﻿using Atata;
+using FluentAssertions;
 using IFlow.Testing.Pages;
 using System;
 using System.Collections.Generic;
@@ -10,21 +11,26 @@ namespace IFlow.Testing.StepDefinitions
     [Binding]
     public sealed class ResizeSteps : BaseSteps
     {
-        private UIComponentSizeProvider<_> sth;
+        private int[] orgMesures;
+        private int[] newMesures;
+        private const int resizeA = 40;
+        private const int resizeB = 50;
 
         [When(@"User makes a box bigger by dragging handle")]
         public void WhenUserMakesBoxBiggerByDraggingHandle()
         {
-            var size = Go.To<ResizePage>();
-            var sth = size.GetBoxSize();
-            size.ResizeHandle.DragAndDropToOffset(20, 20);
+            var page = Go.To<ResizePage>();
+            orgMesures = page.GetElementSize(page.CommentBox);
+            page.ResizeHandle.DragAndDropToOffset(resizeA, resizeB);
         }
 
         [Then(@"the box has bigger size")]
         public void ThenTheBoxHasBiggerSize()
         {
-            On<ResizePage>()
-                .GetBoxSize();
+            var page = On<ResizePage>();
+            newMesures = page.GetElementSize(page.CommentBox);
+            newMesures[0].Equals(orgMesures[0] + resizeA).Should().BeTrue();
+            newMesures[1].Equals(orgMesures[1] + resizeB).Should().BeTrue();
         }
     }
 }
