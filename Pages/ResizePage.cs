@@ -3,10 +3,12 @@
 namespace IFlow.Testing.Pages
 {
     using _ = ResizePage;
-    [Url("/resizable")]
+    [Url(ResizeUrl)]
     [VerifyTitle("ToolsQA")]
     public class ResizePage : BasePage<_>
     {
+        private const string ResizeUrl = "/resizable";
+
         [FindByXPath("//*[@id='resizableBoxWithRestriction']/span")]
         public Clickable<_> ResizeHandle { get; set; }
 
