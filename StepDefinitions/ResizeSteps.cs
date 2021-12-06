@@ -1,9 +1,6 @@
 ﻿using Atata;
 using FluentAssertions;
 using IFlow.Testing.Pages;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using TechTalk.SpecFlow;
 
 namespace IFlow.Testing.StepDefinitions
@@ -13,15 +10,17 @@ namespace IFlow.Testing.StepDefinitions
     {
         private int[] orgMesures;
         private int[] newMesures;
-        private const int resizeA = 40;
-        private const int resizeB = 50;
+        private int sizeA;
+        private int sizeB;
 
-        [When(@"User makes a box bigger by dragging handle")]
-        public void WhenUserMakesBoxBiggerByDraggingHandle()
+        [When(@"User increases the box by '(.*)' and '(.*)' pixels dragging handle")]
+        public void WhenUserMakesBoxBiggerByDraggingHandle(int SizeA, int SizeB)
         {
+            sizeA = SizeA;
+            sizeB = SizeB;
             var page = Go.To<ResizePage>();
             orgMesures = page.GetElementSize(page.CommentBox);
-            page.ResizeHandle.DragAndDropToOffset(resizeA, resizeB);
+            page.ResizeHandle.DragAndDropToOffset(sizeA, sizeB);
         }
 
         [Then(@"the box has bigger size")]
@@ -29,8 +28,8 @@ namespace IFlow.Testing.StepDefinitions
         {
             var page = On<ResizePage>();
             newMesures = page.GetElementSize(page.CommentBox);
-            newMesures[0].Equals(orgMesures[0] + resizeA).Should().BeTrue();
-            newMesures[1].Equals(orgMesures[1] + resizeB).Should().BeTrue();
+            newMesures[0].Equals(orgMesures[0] + sizeA).Should().BeTrue();
+            newMesures[1].Equals(orgMesures[1] + sizeB).Should().BeTrue();
         }
     }
 }
