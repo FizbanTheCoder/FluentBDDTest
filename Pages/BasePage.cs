@@ -8,8 +8,17 @@ namespace IFlow.Testing.Pages
     {
         public int[] GetElementSize(Text<TOwner> element)
         {
-            var mesurements = new int[2] { element.ComponentSize.Width.Value, element.ComponentSize.Height.Value };
-            return mesurements;
+            return new int[2] { element.ComponentSize.Width.Value, element.ComponentSize.Height.Value };
+        }
+        
+        public void AcceptAlert()
+        {
+            AtataContext.Current.Driver.SwitchTo().Alert().Accept();
+        }
+
+        public string GetAlertMessage()
+        {
+            return AtataContext.Current.Driver.SwitchTo().Alert().Text;
         }
     }
 }
