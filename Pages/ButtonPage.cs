@@ -3,10 +3,12 @@
 namespace IFlow.Testing.Pages
 {
     using _ = ButtonPage;
-    [Url("/buttons")]
+    [Url(ButtonUrl)]
     [VerifyTitle("ToolsQA")]
     public class ButtonPage : BasePage<_>
     {
+        private const string ButtonUrl = "/buttons";
+
         [FindById("doubleClickBtn")]
         public Button<_> DoubleClickButton { get; set; }
 

@@ -3,10 +3,12 @@
 namespace IFlow.Testing.Pages
 {
     using _ = TextBoxPage;
-    [Url("/text-box")]
+    [Url(TextBoxUrl)]
     [VerifyTitle("ToolsQA")]
     public class TextBoxPage : BasePage<_>
     {
+        private const string TextBoxUrl = "/text-box";
+
         [FindById("userName")]
         public TextInput<_> UserNameTextBoxInput { get; set; }
 
