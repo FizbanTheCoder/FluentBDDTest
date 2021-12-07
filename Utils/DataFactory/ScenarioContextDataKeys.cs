@@ -11,5 +11,7 @@
         public static string PhoneNumber => "phoneNumber";
         public static string UserToken => "userToken";
         public static string UserId => "userId";
+        public static string SizeA => "sizeA";
+        public static string SizeB => "sizeB";
     }
 }
