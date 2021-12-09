@@ -7,7 +7,5 @@ namespace IFlow.Testing.Utils.DataFactory
     public static class DataBase
     {
         public static string DataBaseConnectionString => "Input your connection string";
-
-       
     }
 }

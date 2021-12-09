@@ -1,6 +1,7 @@
 ﻿using Atata;
 using FluentAssertions;
 using IFlow.Testing.Pages;
+using IFlow.Testing.Utils.SelectorsConsts;
 using TechTalk.SpecFlow;
 
 namespace IFlow.Testing.StepDefinitions
@@ -33,7 +34,7 @@ namespace IFlow.Testing.StepDefinitions
         public void ThenConfirmRightClickMessageAppears()
         {
             Go.To<ButtonPage>()
-                .RightClickMessage.Content.Should().Equals("You have done a right click");
+                .RightClickMessage.Content.Should().Equals(MessagesConsts.RightClickMessage);
         }
 
         [When(@"User clicks a submit button")]
@@ -47,7 +48,7 @@ namespace IFlow.Testing.StepDefinitions
         public void ThenConfirmMessageAppears()
         {
             Go.To<ButtonPage>()
-                .DynamickMessage.Content.Should().Equals("You have done a dynamic click");
+                .DynamickMessage.Content.Should().Equals(MessagesConsts.DynamicClickMessage);
         }
     }
 }
