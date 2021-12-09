@@ -26,7 +26,7 @@ namespace IFlow.Testing
                 .UseAllNUnitFeatures()
                 .ApplyJsonConfig<AtataConfig>()
                 .UseBaseUrl("https://demoqa.com");
-
+          
             AtataContext.GlobalConfiguration.AutoSetUpDriverToUse();
 
             reportPOCO = new ReportPOCO();
