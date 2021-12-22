@@ -3,10 +3,12 @@
 namespace IFlow.Testing.Pages
 {
     using _ = AlertPage;
-    [Url("/alerts")]
+    [Url(AlertUrl)]
     [VerifyTitle("ToolsQA")]
     public class AlertPage : BasePage<_>
     {
+        private const string AlertUrl = "/alerts";
+
         [FindById("alertButton")]
         public Button<_> AlertButton { get; set; }
 

@@ -20,7 +20,7 @@ namespace IFlow.Testing.StepDefinitions
         public void ThenConfirmDoubleClickMessageAppears()
         {
             Go.To<ButtonPage>()
-                .DoubleClickMessage.Content.Should().Equals("You have done a double click");
+                .DoubleClickMessage.Content.Should().Equals(MessagesConsts.DoubleClickMessage);
         }
 
         [When(@"User right clicks a submit button")]

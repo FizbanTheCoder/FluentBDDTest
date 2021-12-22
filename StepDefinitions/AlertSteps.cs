@@ -1,6 +1,7 @@
 ﻿using Atata;
 using FluentAssertions;
 using IFlow.Testing.Pages;
+using IFlow.Testing.Utils.SelectorsConsts;
 using TechTalk.SpecFlow;
 
 namespace IFlow.Testing.StepDefinitions
@@ -23,7 +24,7 @@ namespace IFlow.Testing.StepDefinitions
         [Then(@"Alert message is displayed")]
         public void AlertMessageIsDisplayed()
         {
-            alertMessage.Equals("You clicked a button").Should().BeTrue();
+            alertMessage.Equals(MessagesConsts.ClickedButtonMessage).Should().BeTrue();
         }
 
         [When(@"User click submit button and confirms alert that appears")]
@@ -37,7 +38,7 @@ namespace IFlow.Testing.StepDefinitions
         [Then(@"Correct message appears on page")]
         public void CorrectMessageAppearsOnPage()
         {
-            alertPage.ResultText.Value.Equals("You selected Ok").Should().BeTrue();
+            alertPage.ResultText.Value.Equals(MessagesConsts.ApprovedAlertMessage).Should().BeTrue();
         }
     }
 }
